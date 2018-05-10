@@ -1,0 +1,12 @@
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\bin\Debug\OdysseyClient.exe.config
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\bin\Debug\OdysseyClient.exe
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\bin\Debug\OdysseyClient.pdb
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.csprojResolveAssemblyReference.cache
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.Properties.Resources.resources
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.csproj.GenerateResource.cache
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.csproj.CoreCompileInputs.cache
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.exe
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.pdb
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.Form1.resources
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\bin\Debug\MACTrackBarLib.dll
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.csproj.CopyComplete
