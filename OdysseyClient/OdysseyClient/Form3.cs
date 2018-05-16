@@ -65,6 +65,16 @@ namespace OdysseyClient
 
         private void button1_Click(object sender, EventArgs e)
         {
+            String[] artist = new String[] { textBox3.Text };
+            String[] genere = new String[] { textBox4.Text };
+            TagLib.File tagger = TagLib.File.Create(ruta);
+
+            tagger.Tag.Title = textBox1.Text;
+            tagger.Tag.AlbumArtists = artist;
+            tagger.Tag.Album = textBox3.Text;
+            tagger.Tag.Genres = genere;
+
+            tagger.Save();
             XmlDocument doc = new XmlDocument();
             XmlDeclaration declaracion = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
             doc.AppendChild(declaracion);
@@ -130,6 +140,11 @@ namespace OdysseyClient
             hiloSock.Start(msjEnviar);
 
             this.Close();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
