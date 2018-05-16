@@ -10,3 +10,10 @@ C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\Odyss
 C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.Form1.resources
 C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\bin\Debug\MACTrackBarLib.dll
 C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.csproj.CopyComplete
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\bin\Debug\Id3Lib.dll
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\bin\Debug\Mp3Lib.dll
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\bin\Debug\SharpZipLib.dll
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\bin\Debug\Id3Lib.pdb
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\bin\Debug\Mp3Lib.pdb
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.Form2.resources
+C:\Users\luisk.PC-LUISK\source\repos\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.Form3.resources
