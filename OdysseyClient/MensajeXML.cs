@@ -10,66 +10,80 @@ namespace OdysseyClient
 {
     public class MensajeXML
     {
-        public XmlDocument crearXml(String ruta)
+
+        public XmlDocument borrarCanciones(Object lista)
         {
+            ListaCanciones listaElim = (ListaCanciones)lista;
             XmlDocument doc = new XmlDocument();
-            XmlDeclaration declaracion = doc.CreateXmlDeclaration("1.0","UTF-8",null);
+            XmlDeclaration declaracion = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
             doc.AppendChild(declaracion);
-            //XmlElement raiz = doc.DocumentElement;
-            //doc.InsertBefore(declaracion, raiz);
 
             XmlElement root = doc.CreateElement("MensajeXML");
             doc.AppendChild(root);
 
-            XmlElement codigo = doc.CreateElement("Code");
-            codigo.AppendChild(doc.CreateTextNode("add"));
-            root.AppendChild(codigo);
+            XmlElement datos = doc.CreateElement("Datos");
+            root.AppendChild(datos);
 
-            XmlElement metaData = doc.CreateElement("MetaData");
-            root.AppendChild(metaData);
+            for(int i = 0; i < listaElim.Size(); i++)
+            {
+                XmlElement codigo = doc.CreateElement("Code");
+                codigo.AppendChild(doc.CreateTextNode("cargar"));
+                datos.AppendChild(codigo);
 
-            XmlElement nom = doc.CreateElement("Nombre");
-            nom.AppendChild(doc.CreateTextNode("Psychosocial"));
-            metaData.AppendChild(nom);
+                XmlElement ordenamiento = doc.CreateElement("Orden");
+                ordenamiento.AppendChild(doc.CreateTextNode("nombre"));
+                datos.AppendChild(ordenamiento);
+            }
 
-            XmlElement art = doc.CreateElement("Artista");
-            art.AppendChild(doc.CreateTextNode("Slipknot"));
-            metaData.AppendChild(art);
-
-            XmlElement album = doc.CreateElement("Album");
-            album.AppendChild(doc.CreateTextNode("All Hope is Gone"));
-            metaData.AppendChild(album);
-
-            XmlElement data = doc.CreateElement("Data");
-            root.AppendChild(data);
-
-            XmlElement song = doc.CreateElement("Song");
-            byte[] audioBytes = File.ReadAllBytes(ruta);
-            string base64String = Convert.ToBase64String(audioBytes);
-            song.AppendChild(doc.CreateTextNode(base64String));
-            data.AppendChild(song);
-
-
-
-
-            //doc.Save("C:\\xml\\archivo.xml");
-
-            StringWriter sw = new StringWriter();
-            XmlTextWriter xw = new XmlTextWriter(sw);
-            doc.WriteTo(xw);
-            string XmlString = sw.ToString();
 
             return doc;
         }
 
-        public void addSong(Object song)
+        public XmlDocument cargarCanciones(String orden)
         {
+            XmlDocument doc = new XmlDocument();
+            XmlDeclaration declaracion = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+            doc.AppendChild(declaracion);
 
+            XmlElement root = doc.CreateElement("MensajeXML");
+            doc.AppendChild(root);
+
+            XmlElement datos = doc.CreateElement("Datos");
+            root.AppendChild(datos);
+
+            if (orden.Equals("nombre"))
+            {
+                XmlElement codigo = doc.CreateElement("Code");
+                codigo.AppendChild(doc.CreateTextNode("cargar"));
+                datos.AppendChild(codigo);
+
+                XmlElement ordenamiento = doc.CreateElement("Orden");
+                ordenamiento.AppendChild(doc.CreateTextNode("nombre"));
+                datos.AppendChild(ordenamiento);
+            }
+            else if (orden.Equals("artista"))
+            {
+                XmlElement codigo = doc.CreateElement("Code");
+                codigo.AppendChild(doc.CreateTextNode("cargar"));
+                datos.AppendChild(codigo);
+
+                XmlElement ordenamiento = doc.CreateElement("Orden");
+                ordenamiento.AppendChild(doc.CreateTextNode("artista"));
+                datos.AppendChild(ordenamiento);
+            }
+            else if (orden.Equals("album"))
+            {
+                XmlElement codigo = doc.CreateElement("Code");
+                codigo.AppendChild(doc.CreateTextNode("cargar"));
+                datos.AppendChild(codigo);
+
+                XmlElement ordenamiento = doc.CreateElement("Orden");
+                ordenamiento.AppendChild(doc.CreateTextNode("album"));
+                datos.AppendChild(ordenamiento);
+            }
+            return doc;
         }
 
-        public void deleteSong(Object song)
-        {
 
-        }
     }
 }

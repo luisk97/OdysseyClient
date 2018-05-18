@@ -103,6 +103,26 @@ namespace OdysseyClient.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnSalir {
+            get {
+                object obj = ResourceManager.GetObject("btnSalir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnSalir1 {
+            get {
+                object obj = ResourceManager.GetObject("btnSalir1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cd_icono_9854_128 {
             get {
                 object obj = ResourceManager.GetObject("cd-icono-9854-128", resourceCulture);
@@ -133,6 +153,16 @@ namespace OdysseyClient.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap elim {
+            get {
+                object obj = ResourceManager.GetObject("elim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap generos {
             get {
                 object obj = ResourceManager.GetObject("generos", resourceCulture);
@@ -156,6 +186,26 @@ namespace OdysseyClient.Properties {
         internal static System.Drawing.Bitmap Noti {
             get {
                 object obj = ResourceManager.GetObject("Noti", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap odyssey {
+            get {
+                object obj = ResourceManager.GetObject("odyssey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap odyssey2 {
+            get {
+                object obj = ResourceManager.GetObject("odyssey2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +246,16 @@ namespace OdysseyClient.Properties {
         internal static System.Drawing.Bitmap unnamed {
             get {
                 object obj = ResourceManager.GetObject("unnamed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_blue {
+            get {
+                object obj = ResourceManager.GetObject("User-blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
