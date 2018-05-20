@@ -38,6 +38,7 @@
     <Reference Include="MACTrackBarLib, Version=1.0.5896.38740, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MACTrackBarLib.dll.1.0.2\lib\net40\MACTrackBarLib.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Mp3Lib">
       <HintPath>..\..\..\..\Documents\ID3TagLibrary\csid3lib-v0.5-src\ID3Editor\bin\Release\Mp3Lib.dll</HintPath>
     </Reference>
@@ -65,6 +66,7 @@
     <Compile Include="Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="SocketCliente.cs" />
     <Compile Include="VentanaLogIn.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -18,8 +18,9 @@ namespace OdysseyClient
 {
     public partial class Principal : Form
     {
-        public Principal()
+        public Principal(string usuario)
         {
+            this.usuario = usuario;
             InitializeComponent();
         }
 
@@ -27,34 +28,34 @@ namespace OdysseyClient
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
-
+        SocketCliente sock = new SocketCliente();
+        private string usuario = "Nombre de Usuario";
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             
         }
 
-        private string abrirSocket(object o)
-        {
-            Socket listen = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            IPEndPoint direccion = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8000);
+        //private string abrirSocket(object o)
+        //{
+        //    Socket listen = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        //    IPEndPoint direccion = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8000);
 
-            listen.Connect(direccion);
+        //    listen.Connect(direccion);
 
-            byte[] msjEnviar = (byte[])o;
-            listen.Send(msjEnviar, 0, msjEnviar.Length, 0);
+        //    byte[] msjEnviar = (byte[])o;
+        //    listen.Send(msjEnviar, 0, msjEnviar.Length, 0);
 
-            byte[] bytes = new byte[30000];
-            //recibe datos y devuelve el número de bytes leídos correctamente
-            int count = listen.Receive(bytes);
-            //decodifica bytes a nueva cadena string
-            resp = System.Text.Encoding.ASCII.GetString(bytes, 0, count); 
+        //    byte[] bytes = new byte[30000];
+        //    //recibe datos y devuelve el número de bytes leídos correctamente
+        //    int count = listen.Receive(bytes);
+        //    //decodifica bytes a nueva cadena string
+        //    resp = System.Text.Encoding.ASCII.GetString(bytes, 0, count); 
 
-            listen.Close();
+        //    listen.Close();
 
-            return resp;
-        }
+        //    return resp;
+        //}
 
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,7 +82,7 @@ namespace OdysseyClient
             data.Save(ms);
             byte[] msjEnviar = ms.ToArray();
 
-            resp = abrirSocket(msjEnviar);
+            resp = sock.abrirSocket(msjEnviar);
 
             StringWriter sw = new StringWriter();
             XmlTextWriter xw = new XmlTextWriter(sw);
@@ -101,7 +102,6 @@ namespace OdysseyClient
 
         private void actualizarLista(XmlNodeList listaXml)
         {
-            listBox1.Items.Clear();
             dataGridView1.Rows.Clear();
             ListaCanciones lista = new ListaCanciones();
             XmlNode nodoCancion;
@@ -127,8 +127,6 @@ namespace OdysseyClient
                 fila.Cells[4].Value = lista.obtener(ind).getSong().Genero;
 
                 dataGridView1.Rows.Add(fila);
-
-                listBox1.Items.Add(lista.obtener(ind).getSong().ToString());
             }
         }
 
@@ -148,7 +146,7 @@ namespace OdysseyClient
             data.Save(ms);
             byte[] msjEnviar = ms.ToArray();
 
-            resp = abrirSocket(msjEnviar);
+            resp = sock.abrirSocket(msjEnviar);
 
             StringWriter sw = new StringWriter();
             XmlTextWriter xw = new XmlTextWriter(sw);
@@ -180,7 +178,7 @@ namespace OdysseyClient
             data.Save(ms);
             byte[] msjEnviar = ms.ToArray();
 
-            resp = abrirSocket(msjEnviar);
+            resp = sock.abrirSocket(msjEnviar);
 
             StringWriter sw = new StringWriter();
             XmlTextWriter xw = new XmlTextWriter(sw);
@@ -218,6 +216,7 @@ namespace OdysseyClient
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            label5.Text = usuario;
             panel3.Visible = true;
         }
 
@@ -348,42 +347,137 @@ namespace OdysseyClient
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            ListaCanciones listaElim = new ListaCanciones();
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                if (dataGridView1.Rows[i].Cells[0].Value != null)
-                {
-                    bool isChecked = (bool)dataGridView1.Rows[i].Cells[0].Value;
-                    if (isChecked)
-                    {
-                        Cancion cancion = new Cancion();
-                        cancion.Nombre = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                        cancion.Artista = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                        cancion.Album = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                        cancion.Genero = dataGridView1.Rows[i].Cells[1].Value.ToString();
+            DialogResult opcion;
+            opcion = MessageBox.Show("¿Estas seguro?", "Eliminar Canciones", MessageBoxButtons.OKCancel,MessageBoxIcon.Stop);
 
-                        listaElim.addNodo(cancion);
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                        i--;
+            if (opcion == DialogResult.OK)
+            {
+                ListaCanciones listaElim = new ListaCanciones();
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    if (dataGridView1.Rows[i].Cells[0].Value != null)
+                    {
+                        bool isChecked = (bool)dataGridView1.Rows[i].Cells[0].Value;
+                        if (isChecked)
+                        {
+                            Cancion cancion = new Cancion();
+                            cancion.Nombre = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                            cancion.Artista = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                            cancion.Album = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                            cancion.Genero = dataGridView1.Rows[i].Cells[4].Value.ToString();
+
+                            listaElim.addNodo(cancion);
+                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                            i--;
+                        }
                     }
                 }
-            }
-            panel3.Visible = false;
-            panel4.Visible = true;
-            panel5.Visible = false;
-            panel6.Visible = false;
+                panel3.Visible = false;
 
+                MensajeXML msj = new MensajeXML();
+                XmlDocument data = msj.borrarCanciones(listaElim);
+
+                MemoryStream ms = new MemoryStream();
+                data.Save(ms);
+                byte[] msjEnviar = ms.ToArray();
+
+                resp = sock.abrirSocket(msjEnviar);
+                MessageBox.Show(resp, "Eliminacion de Canciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                button1.Visible = false;
+                dataGridView1.Columns[0].Visible = false;
+                elim = false;
+            }
+        }
+
+        private void artistaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string srchArtist = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre del Artista:", "Buscar Cancion", "", 100, 100);
             MensajeXML msj = new MensajeXML();
-            XmlDocument data = msj.borrarCanciones(listaElim);
+            XmlDocument data = msj.buscarArtista(srchArtist);
 
             MemoryStream ms = new MemoryStream();
             data.Save(ms);
             byte[] msjEnviar = ms.ToArray();
 
-            resp = abrirSocket(msjEnviar);
-            button1.Visible = false;
-            dataGridView1.Columns[0].Visible = false;
-            elim = false;
+            resp = sock.abrirSocket(msjEnviar);
+
+            if (resp.Equals("No encontrado"))
+            {
+                MessageBox.Show("No se encontraron canciones del artista "+ srchArtist, "Busqueda de Canciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                StringWriter sw = new StringWriter();
+                XmlTextWriter xw = new XmlTextWriter(sw);
+                xmlCanciones.LoadXml(resp);
+                xmlCanciones.WriteTo(xw);
+
+                XmlNodeList listaXml = xmlCanciones.GetElementsByTagName("Cancion");
+
+                actualizarLista(listaXml);
+            }
+        }
+
+        private void albumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            string srchAlbum = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre del Album:", "Buscar Cancion", "", 100, 100);
+            if (srchAlbum != null)
+            {
+                MensajeXML msj = new MensajeXML();
+                XmlDocument data = msj.buscarAlbum(srchAlbum);
+
+                MemoryStream ms = new MemoryStream();
+                data.Save(ms);
+                byte[] msjEnviar = ms.ToArray();
+
+                resp = sock.abrirSocket(msjEnviar);
+
+                if (resp.Equals("No encontrado"))
+                {
+                    MessageBox.Show("No se encontraron canciones pertenecientes al album " + srchAlbum, "Busqueda de Canciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                StringWriter sw = new StringWriter();
+                XmlTextWriter xw = new XmlTextWriter(sw);
+                xmlCanciones.LoadXml(resp);
+                xmlCanciones.WriteTo(xw);
+
+                XmlNodeList listaXml = xmlCanciones.GetElementsByTagName("Cancion");
+
+                actualizarLista(listaXml);
+            }
+        }
+
+        private void nombreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string srchSong = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre del Artista:", "Buscar Cancion", "", 100, 100);
+            MensajeXML msj = new MensajeXML();
+            XmlDocument data = msj.buscarNombre(srchSong);
+
+            MemoryStream ms = new MemoryStream();
+            data.Save(ms);
+            byte[] msjEnviar = ms.ToArray();
+
+            resp = sock.abrirSocket(msjEnviar);
+
+            if (resp.Equals("No encontrado"))
+            {
+                MessageBox.Show("No se encontro ninguna cancion con el nombre "+ srchSong, "Busqueda de Canciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                StringWriter sw = new StringWriter();
+                XmlTextWriter xw = new XmlTextWriter(sw);
+                xmlCanciones.LoadXml(resp);
+                xmlCanciones.WriteTo(xw);
+
+                XmlNodeList listaXml = xmlCanciones.GetElementsByTagName("Cancion");
+
+                actualizarLista(listaXml);
+            }
         }
     }
 }

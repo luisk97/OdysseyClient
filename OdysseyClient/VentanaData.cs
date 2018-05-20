@@ -18,6 +18,7 @@ namespace OdysseyClient
     public partial class VentanaData : Form
     {
         string ruta;
+
         public VentanaData(object o)
         {
             ruta = (string)o;
@@ -44,7 +45,7 @@ namespace OdysseyClient
 
             listen.Close();
 
-            MessageBox.Show("La cancion se recivio correctamente en el server");
+            MessageBox.Show("La cancion se recivio correctamente en el Servidor", "Guardado de Canciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void llenarCampos(string ruta)
