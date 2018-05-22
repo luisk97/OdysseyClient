@@ -247,5 +247,28 @@ namespace OdysseyClient
 
             return doc;
         }
+
+        public XmlDocument xmlReproducir(string nombre)
+        {
+            XmlDocument doc = new XmlDocument();
+            XmlDeclaration declaracion = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+            doc.AppendChild(declaracion);
+
+            XmlElement root = doc.CreateElement("MensajeXML");
+            doc.AppendChild(root);
+
+            XmlElement datos = doc.CreateElement("Datos");
+            root.AppendChild(datos);
+
+            XmlElement codigo = doc.CreateElement("Code");
+            codigo.AppendChild(doc.CreateTextNode("play"));
+            datos.AppendChild(codigo);
+
+            XmlElement nom = doc.CreateElement("Nombre");
+            nom.AppendChild(doc.CreateTextNode(nombre));
+            datos.AppendChild(nom);
+
+            return doc;
+        }
     }
 }

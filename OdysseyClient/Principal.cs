@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Runtime.InteropServices;
+using Microsoft.VisualBasic.Devices;
+using System.Media;
+using NAudio.Wave;
 
 namespace OdysseyClient
 {
@@ -100,10 +103,13 @@ namespace OdysseyClient
             //richTextBox1.Text = XmlString;
         }
 
+
+        ListaCanciones lista = new ListaCanciones();
+        Cancion cancionActual = null;
         private void actualizarLista(XmlNodeList listaXml)
         {
             dataGridView1.Rows.Clear();
-            ListaCanciones lista = new ListaCanciones();
+            lista = new ListaCanciones();
             XmlNode nodoCancion;
             for (int i = 0; i < listaXml.Count; i++)
             {
@@ -191,8 +197,6 @@ namespace OdysseyClient
 
             //string XmlString = sw.ToString();
 
-            ////listBox1.Items.Add(XmlString);
-
             //richTextBox1.Text = XmlString + "Ahi esta perro";
         }
 
@@ -239,15 +243,20 @@ namespace OdysseyClient
         private Boolean play = false;
         private void button4_Click(object sender, EventArgs e)
         {
-            if (play)
+            if (output != null)
             {
-                button4.Text = ">";
-                play = false;
-            }
-            else
-            {
-                button4.Text = "l l";
-                play = true;
+                if (output.PlaybackState == PlaybackState.Playing)
+                {
+                    output.Pause();
+                    button4.Text = ">";
+                    play = false;
+                }
+                else if(output.PlaybackState == PlaybackState.Paused)
+                {
+                    output.Play();
+                    button4.Text = "l l";
+                    play = true;
+                }
             }
         }
 
@@ -292,19 +301,163 @@ namespace OdysseyClient
             //label4.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
         }
 
+
+        private void disposeStream()
+        {
+            if(output != null)
+            {
+                if(output.PlaybackState == PlaybackState.Playing)
+                {
+                    output.Stop();
+                }
+                output.Dispose();
+                output = null;
+            }
+            if(stream != null)
+            {
+                stream.Dispose();
+                stream = null;
+            }
+        }
+
+
+        private WaveStream blockAlignedStream;
+        private BlockAlignReductionStream stream;
+        private DirectSoundOut output;
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (!elim)
             {
+                button4.Text = ">";
+                play = false;
+
+                string nombre = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                cancionActual = lista.obtenerPorValor(nombre).getSong();
+
+                MensajeXML msj = new MensajeXML();
+                XmlDocument data = msj.xmlReproducir(nombre);
+
+                MemoryStream ms = new MemoryStream();
+                data.Save(ms);
+                byte[] msjEnviar = ms.ToArray();
+
+                resp = sock.abrirSocket(msjEnviar);
+
+                //StringWriter sw = new StringWriter();
+                //XmlTextWriter xw = new XmlTextWriter(sw);
+                XmlDocument xmlSongtoPlay = new XmlDocument();
+                xmlSongtoPlay.LoadXml(resp.Replace(Environment.NewLine, ""));
+                //xmlSongtoPlay.WriteTo(xw);
+
+                XmlNodeList listaXml = xmlSongtoPlay.GetElementsByTagName("Bytes");
+                XmlNode nodoBytes = listaXml.Item(0);
+                string base64String = nodoBytes.InnerText;
+                //richTextBox1.Text = base64String;
+
+                byte[] mp3bytes = Convert.FromBase64String(base64String);
+                
+
+                Stream msMp3 = new MemoryStream(mp3bytes);
+
+
+
+                //using (WaveStream blockAlignedStream = new BlockAlignReductionStream(WaveFormatConversionStream.CreatePcmStream(new Mp3FileReader(msMp3))))
+                //{
+                //    using (WaveOut waveOut = new WaveOut(WaveCallbackInfo.FunctionCallback()))
+                //    {
+                //        waveOut.Init(blockAlignedStream);
+                //        waveOut.Play();
+                //        while (waveOut.PlaybackState == PlaybackState.Playing)
+                //        {
+                //            System.Threading.Thread.Sleep(100);
+                //        }
+                //    }
+                //}
+                disposeStream();
+
+                blockAlignedStream = new BlockAlignReductionStream(WaveFormatConversionStream.CreatePcmStream(new Mp3FileReader(msMp3)));
+                stream = new BlockAlignReductionStream(blockAlignedStream);
+                output = new DirectSoundOut();
+                output.Init(stream);
+                output.Play();
+
+                button4.Text = "l l";
+                play = true;
+
+
+                //richTextBox1.Text = resp.Replace(Environment.NewLine, " ");
                 label3.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 label4.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+
+                //MensajeXML msj = new MensajeXML();
+                //XmlDocument data = msj.borrarCanciones(listaElim);
+
+                //MemoryStream ms = new MemoryStream();
+                //data.Save(ms);
+                //byte[] msjEnviar = ms.ToArray();
+
+                //resp = sock.abrirSocket(msjEnviar);
             }
         }
+
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (!elim)
             {
+                button4.Text = ">";
+                play = false;
+
+                string nombre = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                cancionActual = lista.obtenerPorValor(nombre).getSong();
+
+                MensajeXML msj = new MensajeXML();
+                XmlDocument data = msj.xmlReproducir(nombre);
+
+                MemoryStream ms = new MemoryStream();
+                data.Save(ms);
+                byte[] msjEnviar = ms.ToArray();
+
+                resp = sock.abrirSocket(msjEnviar);
+                
+                XmlDocument xmlSongtoPlay = new XmlDocument();
+                xmlSongtoPlay.LoadXml(resp.Replace(Environment.NewLine, ""));
+
+                XmlNodeList listaXml = xmlSongtoPlay.GetElementsByTagName("Bytes");
+                XmlNode nodoBytes = listaXml.Item(0);
+                string base64String = nodoBytes.InnerText;
+                //richTextBox1.Text = base64String;
+
+                byte[] mp3bytes = Convert.FromBase64String(base64String);
+
+
+                Stream msMp3 = new MemoryStream(mp3bytes);
+
+
+
+                //using (WaveStream blockAlignedStream = new BlockAlignReductionStream(WaveFormatConversionStream.CreatePcmStream(new Mp3FileReader(msMp3))))
+                //{
+                //    using (WaveOut waveOut = new WaveOut(WaveCallbackInfo.FunctionCallback()))
+                //    {
+                //        waveOut.Init(blockAlignedStream);
+                //        waveOut.Play();
+                //        while (waveOut.PlaybackState == PlaybackState.Playing)
+                //        {
+                //            System.Threading.Thread.Sleep(100);
+                //        }
+                //    }
+                //}
+                disposeStream();
+
+                blockAlignedStream = new BlockAlignReductionStream(WaveFormatConversionStream.CreatePcmStream(new Mp3FileReader(msMp3)));
+                stream = new BlockAlignReductionStream(blockAlignedStream);
+                output = new DirectSoundOut();
+                output.Init(stream);
+                output.Play();
+
+                button4.Text = "l l";
+                play = true;
+
                 label3.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 label4.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             }
@@ -477,6 +630,79 @@ namespace OdysseyClient
                 XmlNodeList listaXml = xmlCanciones.GetElementsByTagName("Cancion");
 
                 actualizarLista(listaXml);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            button4.Text = ">";
+            play = false;
+            
+            Nodo nodoCancionActual = lista.obtenerPorValor(cancionActual.Nombre).getSiguiente();
+            if (nodoCancionActual != null)
+            {
+                cancionActual = nodoCancionActual.getSong();
+
+                string nombre = cancionActual.Nombre;
+                MensajeXML msj = new MensajeXML();
+                XmlDocument data = msj.xmlReproducir(nombre);
+
+                MemoryStream ms = new MemoryStream();
+                data.Save(ms);
+                byte[] msjEnviar = ms.ToArray();
+
+                resp = sock.abrirSocket(msjEnviar);
+
+                //StringWriter sw = new StringWriter();
+                //XmlTextWriter xw = new XmlTextWriter(sw);
+                XmlDocument xmlSongtoPlay = new XmlDocument();
+                xmlSongtoPlay.LoadXml(resp.Replace(Environment.NewLine, ""));
+                //xmlSongtoPlay.WriteTo(xw);
+
+                XmlNodeList listaXml = xmlSongtoPlay.GetElementsByTagName("Bytes");
+                XmlNode nodoBytes = listaXml.Item(0);
+                string base64String = nodoBytes.InnerText;
+                //richTextBox1.Text = base64String;
+
+                byte[] mp3bytes = Convert.FromBase64String(base64String);
+
+
+                Stream msMp3 = new MemoryStream(mp3bytes);
+
+
+
+                //using (WaveStream blockAlignedStream = new BlockAlignReductionStream(WaveFormatConversionStream.CreatePcmStream(new Mp3FileReader(msMp3))))
+                //{
+                //    using (WaveOut waveOut = new WaveOut(WaveCallbackInfo.FunctionCallback()))
+                //    {
+                //        waveOut.Init(blockAlignedStream);
+                //        waveOut.Play();
+                //        while (waveOut.PlaybackState == PlaybackState.Playing)
+                //        {
+                //            System.Threading.Thread.Sleep(100);
+                //        }
+                //    }
+                //}
+                disposeStream();
+
+                blockAlignedStream = new BlockAlignReductionStream(WaveFormatConversionStream.CreatePcmStream(new Mp3FileReader(msMp3)));
+                stream = new BlockAlignReductionStream(blockAlignedStream);
+                output = new DirectSoundOut();
+                output.Init(stream);
+                output.Play();
+
+                button4.Text = "l l";
+                play = true;
+
+
+                label3.Text = nombre;
+                label4.Text = cancionActual.Artista;
+            }
+            else
+            {
+                disposeStream();
+                label3.Text = "Nombre de la Cancion";
+                label4.Text = "Nombre del Artista";
             }
         }
     }

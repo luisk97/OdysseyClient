@@ -118,6 +118,23 @@ namespace OdysseyClient
             return null;
         }
 
+        public Nodo obtenerPorValor(string valor)
+        {
+            Nodo temp = cabeza;
+            while (temp != null)
+            {
+                if (temp.getSong().Nombre == valor)
+                {
+                    return temp;
+                }
+                else
+                {
+                    temp = temp.getSiguiente();
+                }
+            }
+            return null;
+        }
+
         public void clear()
         {
             cabeza = null;

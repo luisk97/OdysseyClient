@@ -51,6 +51,9 @@ namespace OdysseyClient
                 MessageBox.Show("No existe ese usuario", "Inicio de Sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox2.Text = "";
                 textBox1.Text = "";
+            }else
+            {
+                MessageBox.Show(resp);
             }
             
         }

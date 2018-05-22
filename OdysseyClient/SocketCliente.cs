@@ -12,7 +12,7 @@ namespace OdysseyClient
     {
         public string abrirSocket(object o)
         {
-            string resp;
+            string resp = null;
             Socket listen = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IPEndPoint direccion = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8000);
 
@@ -21,15 +21,27 @@ namespace OdysseyClient
             byte[] msjEnviar = (byte[])o;
             listen.Send(msjEnviar, 0, msjEnviar.Length, 0);
 
-            byte[] bytes = new byte[30000];
-            //recibe datos y devuelve el número de bytes leídos correctamente
-            int count = listen.Receive(bytes);
-            //decodifica bytes a nueva cadena string
-            resp = System.Text.Encoding.ASCII.GetString(bytes, 0, count);
+            int bytesRead = 1;
+            int cont = 0;
+            while (bytesRead != 0) {
+                byte[] buffer = new byte[30000];
+
+                bytesRead = listen.Receive(buffer);
+                
+
+                string response = System.Text.Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                resp += response;
+            }
+
+            //byte[] bytes = new byte[30000];
+            ////recibe datos y devuelve el número de bytes leídos correctamente
+            //int count = listen.Receive(bytes);
+            ////decodifica bytes a nueva cadena string
+            //resp = System.Text.Encoding.ASCII.GetString(bytes, 0, count);
 
             listen.Close();
 
-            return resp;
+            return resp.TrimEnd();
         }
     }
 }

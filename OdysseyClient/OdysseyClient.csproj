@@ -42,6 +42,9 @@
     <Reference Include="Mp3Lib">
       <HintPath>..\..\..\..\Documents\ID3TagLibrary\csid3lib-v0.5-src\ID3Editor\bin\Release\Mp3Lib.dll</HintPath>
     </Reference>
+    <Reference Include="NAudio">
+      <HintPath>..\..\..\..\Documents\tec\lll Semestre\Datos l\Proyecto2\NAudioLibreria\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="SharpZipLib">
       <HintPath>..\..\..\..\Documents\ID3TagLibrary\csid3lib-v0.5-src\ID3Editor\bin\Release\SharpZipLib.dll</HintPath>
     </Reference>
