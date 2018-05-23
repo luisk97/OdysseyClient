@@ -24,6 +24,11 @@ namespace OdysseyClient
             return cabeza;
         }
 
+        public Nodo getUltimo()
+        {
+            return ultimo;
+        }
+
         public void addNodo(Cancion cancion)
         {
             Nodo nuevo = new Nodo(cancion);
@@ -36,44 +41,45 @@ namespace OdysseyClient
             {
                 Nodo temp = ultimo;
                 temp.enlazarSiguiente(nuevo);
+                nuevo.enlazarAnterior(temp);
                 ultimo = nuevo;
             }
             size++;
         }
 
-        public void eliminar(int ind)
-        {
-            if (ind < size)
-            {
-                if (ind == 0)
-                {
-                    cabeza = cabeza.getSiguiente();
-                }
-                else
-                {
-                    Nodo temp = cabeza;
-                    for (int i = 0; i < (ind - 1); i++)
-                    {
-                        temp = temp.getSiguiente();
-                    }
-                    if (ind == size - 1)
-                    {
-                        temp.enlazarSiguiente(null);
-                        ultimo = temp;
-                    }
-                    else
-                    {
-                        temp.enlazarSiguiente(temp.getSiguiente().getSiguiente());
-                    }
-                }
-                size--;
-            }
-            else
-            {
+        //public void eliminar(int ind)
+        //{
+        //    if (ind < size)
+        //    {
+        //        if (ind == 0)
+        //        {
+        //            cabeza = cabeza.getSiguiente();
+        //        }
+        //        else
+        //        {
+        //            Nodo temp = cabeza;
+        //            for (int i = 0; i < (ind - 1); i++)
+        //            {
+        //                temp = temp.getSiguiente();
+        //            }
+        //            if (ind == size - 1)
+        //            {
+        //                temp.enlazarSiguiente(null);
+        //                ultimo = temp;
+        //            }
+        //            else
+        //            {
+        //                temp.enlazarSiguiente(temp.getSiguiente().getSiguiente());
+        //            }
+        //        }
+        //        size--;
+        //    }
+        //    else
+        //    {
 
-            }
+        //    }
 
-        }
+        //}
 
         public int Size()
         {

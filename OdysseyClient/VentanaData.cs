@@ -112,7 +112,12 @@ namespace OdysseyClient
             letra.AppendChild(doc.CreateTextNode(richTextBox1.Text));
             metaData.AppendChild(letra);
             mp3archivo.TagHandler.Lyrics = richTextBox1.Text;
-            mp3archivo.Update();
+            try
+            {
+                mp3archivo.Update();
+            }catch(Exception )
+            {
+            }
 
             XmlElement data = doc.CreateElement("Data");
             datos.AppendChild(data);

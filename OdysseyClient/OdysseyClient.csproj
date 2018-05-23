@@ -139,6 +139,15 @@
     <None Include="Resources\1486348523-music-note-play-melody_80456.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\repCanVer.png" />
+    <None Include="Resources\repCanVer1.png" />
+    <Content Include="Resources\repetirVer.png" />
+    <None Include="Resources\repetirVer1.png" />
+    <None Include="Resources\repCanNeg1.png" />
+    <None Include="Resources\stop1.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\repetirNeg.png" />
+    <None Include="Resources\repCanNeg.png" />
     <None Include="Resources\odyssey2.jpg" />
     <None Include="Resources\odyssey.jpg" />
     <None Include="Resources\User-blue.png" />

@@ -10,6 +10,7 @@ namespace OdysseyClient
     {
         private Cancion song;
         private Nodo siguiente;
+        private Nodo anterior;
 
         public Nodo(Cancion song)
         {
@@ -27,9 +28,19 @@ namespace OdysseyClient
             return siguiente;
         }
 
+        public Nodo getAnterior()
+        {
+            return anterior;
+        }
+
         public void enlazarSiguiente(Nodo siguiente)
         {
             this.siguiente = siguiente;
+        }
+
+        public void enlazarAnterior(Nodo anterior)
+        {
+            this.anterior = anterior;
         }
     }
 }
