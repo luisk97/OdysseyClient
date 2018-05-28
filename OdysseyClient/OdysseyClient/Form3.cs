@@ -70,7 +70,7 @@ namespace OdysseyClient
             TagLib.File tagger = TagLib.File.Create(ruta);
 
             tagger.Tag.Title = textBox1.Text;
-            tagger.Tag.AlbumArtists = artist;
+            //tagger.Tag.AlbumArtists = artist;
             tagger.Tag.Album = textBox3.Text;
             tagger.Tag.Genres = genere;
 
@@ -145,6 +145,11 @@ namespace OdysseyClient
         private void Form3_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

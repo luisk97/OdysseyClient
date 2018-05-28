@@ -91,13 +91,15 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.opcionesToolStripMenuItem,
             this.hToolStripMenuItem,
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1002, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1336, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseDown);
@@ -108,7 +110,7 @@
             this.ordenarPorToolStripMenuItem});
             this.opcionesToolStripMenuItem.Image = global::OdysseyClient.Properties.Resources.search_symbol_icon_icons_com_71358;
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
             this.opcionesToolStripMenuItem.Text = " ";
             // 
             // ordenarPorToolStripMenuItem
@@ -118,35 +120,35 @@
             this.albumToolStripMenuItem,
             this.nombreToolStripMenuItem});
             this.ordenarPorToolStripMenuItem.Name = "ordenarPorToolStripMenuItem";
-            this.ordenarPorToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.ordenarPorToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.ordenarPorToolStripMenuItem.Text = "Buscar por...";
             // 
             // artistaToolStripMenuItem
             // 
             this.artistaToolStripMenuItem.Image = global::OdysseyClient.Properties.Resources._26757;
             this.artistaToolStripMenuItem.Name = "artistaToolStripMenuItem";
-            this.artistaToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.artistaToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.artistaToolStripMenuItem.Text = "Artista";
             // 
             // albumToolStripMenuItem
             // 
             this.albumToolStripMenuItem.Image = global::OdysseyClient.Properties.Resources.cdrom_83724;
             this.albumToolStripMenuItem.Name = "albumToolStripMenuItem";
-            this.albumToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.albumToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.albumToolStripMenuItem.Text = "Album";
             // 
             // nombreToolStripMenuItem
             // 
             this.nombreToolStripMenuItem.Image = global::OdysseyClient.Properties.Resources._1486348523_music_note_play_melody_80456;
             this.nombreToolStripMenuItem.Name = "nombreToolStripMenuItem";
-            this.nombreToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.nombreToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.nombreToolStripMenuItem.Text = "Nombre";
             // 
             // hToolStripMenuItem
             // 
             this.hToolStripMenuItem.Image = global::OdysseyClient.Properties.Resources._512px_Plus_font_awesome_svg;
             this.hToolStripMenuItem.Name = "hToolStripMenuItem";
-            this.hToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.hToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
             this.hToolStripMenuItem.Text = " ";
             this.hToolStripMenuItem.Click += new System.EventHandler(this.hToolStripMenuItem_Click);
             // 
@@ -154,7 +156,7 @@
             // 
             this.toolStripMenuItem1.Image = global::OdysseyClient.Properties.Resources.delete;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(38, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(45, 24);
             this.toolStripMenuItem1.Text = " ";
             // 
             // panel1
@@ -171,35 +173,39 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 460);
+            this.panel1.Location = new System.Drawing.Point(0, 566);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1002, 101);
+            this.panel1.Size = new System.Drawing.Size(1336, 124);
             this.panel1.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(741, 66);
+            this.label7.Location = new System.Drawing.Point(988, 81);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 13);
+            this.label7.Size = new System.Drawing.Size(44, 17);
             this.label7.TabIndex = 10;
             this.label7.Text = "00:00";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(297, 66);
+            this.label6.Location = new System.Drawing.Point(396, 81);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.Size = new System.Drawing.Size(44, 17);
             this.label6.TabIndex = 9;
             this.label6.Text = "00:00";
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::OdysseyClient.Properties.Resources.volFull;
-            this.pictureBox4.Location = new System.Drawing.Point(794, 62);
+            this.pictureBox4.Location = new System.Drawing.Point(1059, 76);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(38, 32);
+            this.pictureBox4.Size = new System.Drawing.Size(51, 39);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 8;
             this.pictureBox4.TabStop = false;
@@ -211,11 +217,12 @@
             this.macTrackBar2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.macTrackBar2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
             this.macTrackBar2.IndentHeight = 6;
-            this.macTrackBar2.Location = new System.Drawing.Point(828, 66);
+            this.macTrackBar2.Location = new System.Drawing.Point(1104, 81);
+            this.macTrackBar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.macTrackBar2.Maximum = 10;
             this.macTrackBar2.Minimum = 0;
             this.macTrackBar2.Name = "macTrackBar2";
-            this.macTrackBar2.Size = new System.Drawing.Size(162, 28);
+            this.macTrackBar2.Size = new System.Drawing.Size(216, 28);
             this.macTrackBar2.TabIndex = 7;
             this.macTrackBar2.TextTickStyle = System.Windows.Forms.TickStyle.None;
             this.macTrackBar2.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
@@ -235,11 +242,12 @@
             this.macTrackBar1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.macTrackBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
             this.macTrackBar1.IndentHeight = 6;
-            this.macTrackBar1.Location = new System.Drawing.Point(299, 32);
+            this.macTrackBar1.Location = new System.Drawing.Point(399, 39);
+            this.macTrackBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.macTrackBar1.Maximum = 10;
             this.macTrackBar1.Minimum = 0;
             this.macTrackBar1.Name = "macTrackBar1";
-            this.macTrackBar1.Size = new System.Drawing.Size(476, 28);
+            this.macTrackBar1.Size = new System.Drawing.Size(635, 28);
             this.macTrackBar1.TabIndex = 6;
             this.macTrackBar1.TextTickStyle = System.Windows.Forms.TickStyle.None;
             this.macTrackBar1.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
@@ -256,9 +264,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(117, 54);
+            this.label4.Location = new System.Drawing.Point(156, 66);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 15);
+            this.label4.Size = new System.Drawing.Size(66, 18);
             this.label4.TabIndex = 5;
             this.label4.Text = "Metallica";
             // 
@@ -266,9 +275,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(117, 20);
+            this.label3.Location = new System.Drawing.Point(156, 25);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 22);
+            this.label3.Size = new System.Drawing.Size(130, 26);
             this.label3.TabIndex = 4;
             this.label3.Text = "Sad but true";
             // 
@@ -276,9 +286,10 @@
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(932, 15);
+            this.button6.Location = new System.Drawing.Point(1243, 18);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(48, 38);
+            this.button6.Size = new System.Drawing.Size(64, 47);
             this.button6.TabIndex = 3;
             this.button6.Text = ">>";
             this.button6.UseVisualStyleBackColor = true;
@@ -287,9 +298,10 @@
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(794, 15);
+            this.button5.Location = new System.Drawing.Point(1059, 18);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(46, 38);
+            this.button5.Size = new System.Drawing.Size(61, 47);
             this.button5.TabIndex = 2;
             this.button5.Text = "<<";
             this.button5.UseVisualStyleBackColor = true;
@@ -299,9 +311,10 @@
             this.button4.BackgroundImage = global::OdysseyClient.Properties.Resources.Play_Music_icon;
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(860, 8);
+            this.button4.Location = new System.Drawing.Point(1147, 10);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(53, 52);
+            this.button4.Size = new System.Drawing.Size(71, 64);
             this.button4.TabIndex = 1;
             this.button4.Text = ">";
             this.button4.UseVisualStyleBackColor = true;
@@ -312,8 +325,9 @@
             this.pictureBox1.Image = global::OdysseyClient.Properties.Resources.unnamed;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 101);
+            this.pictureBox1.Size = new System.Drawing.Size(133, 124);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -329,35 +343,40 @@
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(0, 27);
+            this.panel2.Location = new System.Drawing.Point(0, 33);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(100, 435);
+            this.panel2.Size = new System.Drawing.Size(133, 535);
             this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Lime;
-            this.panel6.Location = new System.Drawing.Point(0, 119);
+            this.panel6.Location = new System.Drawing.Point(0, 146);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(102, 5);
+            this.panel6.Size = new System.Drawing.Size(136, 6);
             this.panel6.TabIndex = 7;
             this.panel6.Visible = false;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Lime;
-            this.panel5.Location = new System.Drawing.Point(0, 165);
+            this.panel5.Location = new System.Drawing.Point(0, 203);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(102, 5);
+            this.panel5.Size = new System.Drawing.Size(136, 6);
             this.panel5.TabIndex = 7;
             this.panel5.Visible = false;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Lime;
-            this.panel4.Location = new System.Drawing.Point(0, 73);
+            this.panel4.Location = new System.Drawing.Point(0, 90);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(102, 5);
+            this.panel4.Size = new System.Drawing.Size(136, 6);
             this.panel4.TabIndex = 6;
             this.panel4.Visible = false;
             // 
@@ -365,11 +384,13 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 13);
+            this.label2.Location = new System.Drawing.Point(16, 16);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 15);
+            this.label2.Size = new System.Drawing.Size(92, 18);
             this.label2.TabIndex = 4;
             this.label2.Text = "Ordenar por:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button3
             // 
@@ -379,9 +400,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.Location = new System.Drawing.Point(0, 130);
+            this.button3.Location = new System.Drawing.Point(0, 160);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 40);
+            this.button3.Size = new System.Drawing.Size(143, 49);
             this.button3.TabIndex = 3;
             this.button3.Text = "Album";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -396,9 +418,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.Location = new System.Drawing.Point(0, 84);
+            this.button2.Location = new System.Drawing.Point(0, 103);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 40);
+            this.button2.Size = new System.Drawing.Size(143, 49);
             this.button2.TabIndex = 3;
             this.button2.Text = "Artista";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -413,9 +436,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.Location = new System.Drawing.Point(0, 38);
+            this.button1.Location = new System.Drawing.Point(0, 47);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 40);
+            this.button1.Size = new System.Drawing.Size(143, 49);
             this.button1.TabIndex = 3;
             this.button1.Text = "Cancion";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -425,9 +449,10 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.pictureBox5);
-            this.panel7.Location = new System.Drawing.Point(234, 0);
+            this.panel7.Location = new System.Drawing.Point(312, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(498, 459);
+            this.panel7.Size = new System.Drawing.Size(664, 565);
             this.panel7.TabIndex = 6;
             this.panel7.Visible = false;
             // 
@@ -436,8 +461,9 @@
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::OdysseyClient.Properties.Resources.retrocederBlank;
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(51, 37);
+            this.pictureBox5.Size = new System.Drawing.Size(68, 46);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
@@ -446,9 +472,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(491, 183);
+            this.label1.Location = new System.Drawing.Point(655, 225);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "label1";
             // 
@@ -461,9 +488,10 @@
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Location = new System.Drawing.Point(813, 27);
+            this.panel3.Location = new System.Drawing.Point(1084, 33);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(189, 432);
+            this.panel3.Size = new System.Drawing.Size(252, 532);
             this.panel3.TabIndex = 5;
             this.panel3.Visible = false;
             // 
@@ -475,9 +503,10 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Image = global::OdysseyClient.Properties.Resources.btnSalir1;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button10.Location = new System.Drawing.Point(0, 394);
+            this.button10.Location = new System.Drawing.Point(0, 485);
+            this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(189, 41);
+            this.button10.Size = new System.Drawing.Size(252, 50);
             this.button10.TabIndex = 5;
             this.button10.Text = "Salir";
             this.button10.UseVisualStyleBackColor = true;
@@ -489,9 +518,10 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Image = global::OdysseyClient.Properties.Resources.generos;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(0, 139);
+            this.button9.Location = new System.Drawing.Point(0, 171);
+            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(189, 26);
+            this.button9.Size = new System.Drawing.Size(252, 32);
             this.button9.TabIndex = 4;
             this.button9.Text = "Generos Favoritos";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -504,9 +534,10 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Image = global::OdysseyClient.Properties.Resources.amigos;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(0, 107);
+            this.button8.Location = new System.Drawing.Point(0, 132);
+            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(189, 26);
+            this.button8.Size = new System.Drawing.Size(252, 32);
             this.button8.TabIndex = 3;
             this.button8.Text = "Amigos";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -520,9 +551,10 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Image = global::OdysseyClient.Properties.Resources.Noti;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 75);
+            this.button7.Location = new System.Drawing.Point(0, 92);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(189, 26);
+            this.button7.Size = new System.Drawing.Size(252, 32);
             this.button7.TabIndex = 2;
             this.button7.Text = "Notificaciones";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -531,9 +563,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 24);
+            this.label5.Location = new System.Drawing.Point(16, 30);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 13);
+            this.label5.Size = new System.Drawing.Size(131, 17);
             this.label5.TabIndex = 1;
             this.label5.Text = "Nombre de Usuario";
             // 
@@ -541,9 +574,10 @@
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::OdysseyClient.Properties.Resources.user_info_interface_symbol_with_text_lines_at_right_side_icon_icons_com_73114;
-            this.pictureBox3.Location = new System.Drawing.Point(138, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(184, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(51, 48);
+            this.pictureBox3.Size = new System.Drawing.Size(68, 59);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -556,11 +590,13 @@
             this.listBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listBox1.ForeColor = System.Drawing.Color.Black;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(100, 238);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(133, 293);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.MultiColumn = true;
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox1.Size = new System.Drawing.Size(902, 221);
+            this.listBox1.Size = new System.Drawing.Size(1203, 272);
             this.listBox1.TabIndex = 6;
             // 
             // button11
@@ -570,9 +606,10 @@
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(979, 1);
+            this.button11.Location = new System.Drawing.Point(1305, 1);
+            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(23, 23);
+            this.button11.Size = new System.Drawing.Size(31, 28);
             this.button11.TabIndex = 7;
             this.button11.Text = "X";
             this.button11.UseVisualStyleBackColor = false;
@@ -585,9 +622,10 @@
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Location = new System.Drawing.Point(952, 1);
+            this.button12.Location = new System.Drawing.Point(1269, 1);
+            this.button12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(21, 23);
+            this.button12.Size = new System.Drawing.Size(28, 28);
             this.button12.TabIndex = 8;
             this.button12.Text = "--";
             this.button12.UseVisualStyleBackColor = false;
@@ -597,9 +635,10 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::OdysseyClient.Properties.Resources.userBlank;
-            this.pictureBox2.Location = new System.Drawing.Point(951, 27);
+            this.pictureBox2.Location = new System.Drawing.Point(1268, 33);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 48);
+            this.pictureBox2.Size = new System.Drawing.Size(68, 59);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -607,19 +646,20 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(103, 27);
+            this.richTextBox1.Location = new System.Drawing.Point(137, 33);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(842, 205);
+            this.richTextBox1.Size = new System.Drawing.Size(1121, 251);
             this.richTextBox1.TabIndex = 9;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged_1);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1002, 560);
+            this.ClientSize = new System.Drawing.Size(1336, 689);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.listBox1);
@@ -633,6 +673,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Opacity = 0.98D;
             this.Text = "Odyssey";
