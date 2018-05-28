@@ -36,7 +36,7 @@ namespace OdysseyClient
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         SocketCliente sock = new SocketCliente();
-        private string usuario = "Nombre de Usuario";
+        string usuario = "Nombre de Usuario";
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -317,11 +317,6 @@ namespace OdysseyClient
                 output.Dispose();
                 output = null;
             }
-            //if(stream != null)
-            //{
-            //    stream.Dispose();
-            //    stream = null;
-            //}
         }
 
 
@@ -403,6 +398,10 @@ namespace OdysseyClient
                 //richTextBox1.Text = resp.Replace(Environment.NewLine, " ");
                 label3.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 label4.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                lblAlb.Text = cancionActual.Album;
+                lblArt.Text = cancionActual.Artista;
+                lblGen.Text = cancionActual.Genero;
+                lblNom.Text = cancionActual.Nombre;
 
                 //MensajeXML msj = new MensajeXML();
                 //XmlDocument data = msj.borrarCanciones(listaElim);
@@ -430,6 +429,10 @@ namespace OdysseyClient
 
                 label3.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 label4.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                lblAlb.Text = cancionActual.Album;
+                lblArt.Text = cancionActual.Artista;
+                lblGen.Text = cancionActual.Genero;
+                lblNom.Text = cancionActual.Nombre;
             }
         }
 
@@ -440,8 +443,7 @@ namespace OdysseyClient
             {
                 button4.Text = ">";
                 play = false;
-                label3.Text = "Nombre de la Cancion";
-                label4.Text = "Nombre del Artista";
+                cleanLabels();
                 output.Stop();
                 disposeStream();
             }
@@ -635,6 +637,10 @@ namespace OdysseyClient
 
                     label3.Text = nombre;
                     label4.Text = cancionActual.Artista;
+                    lblAlb.Text = cancionActual.Album;
+                    lblArt.Text = cancionActual.Artista;
+                    lblGen.Text = cancionActual.Genero;
+                    lblNom.Text = cancionActual.Nombre;
                 }
                 else if (repLista)
                 {
@@ -650,19 +656,23 @@ namespace OdysseyClient
 
                         label3.Text = nombre;
                         label4.Text = cancionActual.Artista;
+                        lblAlb.Text = cancionActual.Album;
+                        lblArt.Text = cancionActual.Artista;
+                        lblGen.Text = cancionActual.Genero;
+                        lblNom.Text = cancionActual.Nombre;
                     }
 
                 }
                 else
                 {
                     disposeStream();
-                    label3.Text = "Nombre de la Cancion";
-                    label4.Text = "Nombre del Artista";
+                    cleanLabels();
 
                 }
             }
         }
 
+        private int vol;
         private void timer_Tick(object sender, EventArgs e)
         {
             songTrackBar1.Value = (int)mp3Reader.CurrentTime.TotalSeconds;
@@ -693,6 +703,10 @@ namespace OdysseyClient
 
                             label3.Text = nombre;
                             label4.Text = cancionActual.Artista;
+                            lblAlb.Text = cancionActual.Album;
+                            lblArt.Text = cancionActual.Artista;
+                            lblGen.Text = cancionActual.Genero;
+                            lblNom.Text = cancionActual.Nombre;
                         }
                         else if(repLista)
                         {
@@ -708,14 +722,17 @@ namespace OdysseyClient
 
                                 label3.Text = nombre;
                                 label4.Text = cancionActual.Artista;
+                                lblAlb.Text = cancionActual.Album;
+                                lblArt.Text = cancionActual.Artista;
+                                lblGen.Text = cancionActual.Genero;
+                                lblNom.Text = cancionActual.Nombre;
                             }
 
                         }
                         else
                         {
                             disposeStream();
-                            label3.Text = "Nombre de la Cancion";
-                            label4.Text = "Nombre del Artista";
+                            cleanLabels();
 
                         }
                     }
@@ -724,7 +741,53 @@ namespace OdysseyClient
                 if(comboBox1.SelectedItem != null)
                 {
                     var device = (MMDevice)comboBox1.SelectedItem;
-                    progressBar1.Value = (int) Math.Round((device.AudioMeterInformation.MasterPeakValue * 100));
+                    vol = (int)Math.Round((device.AudioMeterInformation.MasterPeakValue * 100));
+                    progressBar1.Value = vol;
+                    label1.Text = vol.ToString();
+                    if (vol > 5)
+                    {
+                        bar1.Visible = true;
+                        bar2.Visible = false;
+                        bar3.Visible = false;
+                        bar4.Visible = false;
+                        bar5.Visible = false;
+                        bar6.Visible = false;
+                        bar7.Visible = false;
+                        if (vol > 14)
+                        {
+                            bar2.Visible = true;
+                            if (vol > 28)
+                            {
+                                bar3.Visible = true;
+                                if(vol > 42)
+                                {
+                                    bar4.Visible = true;
+                                    if(vol > 56)
+                                    {
+                                        bar5.Visible = true;
+                                        if(vol > 70)
+                                        {
+                                            bar6.Visible = true;
+                                            if(vol > 84)
+                                            {
+                                                bar7.Visible = true;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        bar1.Visible = false;
+                        bar2.Visible = false;
+                        bar3.Visible = false;
+                        bar4.Visible = false;
+                        bar5.Visible = false;
+                        bar6.Visible = false;
+                        bar7.Visible = false;
+                    }
                 }
             }
         }
@@ -790,6 +853,10 @@ namespace OdysseyClient
 
                     label3.Text = nombre;
                     label4.Text = cancionActual.Artista;
+                    lblAlb.Text = cancionActual.Album;
+                    lblArt.Text = cancionActual.Artista;
+                    lblGen.Text = cancionActual.Genero;
+                    lblNom.Text = cancionActual.Nombre;
                 }
                 else if (repLista)
                 {
@@ -805,17 +872,71 @@ namespace OdysseyClient
 
                         label3.Text = nombre;
                         label4.Text = cancionActual.Artista;
+                        lblAlb.Text = cancionActual.Album;
+                        lblArt.Text = cancionActual.Artista;
+                        lblGen.Text = cancionActual.Genero;
+                        lblNom.Text = cancionActual.Nombre;
                     }
 
                 }
                 else
                 {
                     disposeStream();
-                    label3.Text = "Nombre de la Cancion";
-                    label4.Text = "Nombre del Artista";
+                    cleanLabels();
 
                 }
             }
+        }
+
+        private void cleanLabels()
+        {
+            label3.Text = "Nombre de la Cancion";
+            label4.Text = "Nombre del Artista";
+            lblAlb.Text = "Album";
+            lblArt.Text = "Artista";
+            lblGen.Text = "Genero";
+            lblNom.Text = "Cancion";
+        }
+
+        private void panel7_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pictureBox7_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnNotifica_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            MensajeXML msj = new MensajeXML();
+            XmlDocument data = msj.solicitarInfoUsuario(usuario);
+
+            MemoryStream ms = new MemoryStream();
+            data.Save(ms);
+            byte[] msjEnviar = ms.ToArray();
+
+            resp = sock.abrirSocket(msjEnviar);
+            XmlDocument xmlUsuario = new XmlDocument();
+            xmlUsuario.LoadXml(resp);
+
+            XmlNodeList listUs = xmlUsuario.GetElementsByTagName("User");
+            XmlNode nodoUser = listUs.Item(0);
+
+            string nombre = nodoUser.SelectSingleNode("nombre").InnerText;
+            string edad = nodoUser.SelectSingleNode("edad").InnerText;
+
+            VentanaPerfil vPerfil = new VentanaPerfil(usuario, nombre, edad);
+            vPerfil.Owner = this;
+            vPerfil.ShowDialog();
         }
     }
 }

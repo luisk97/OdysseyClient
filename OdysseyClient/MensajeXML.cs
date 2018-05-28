@@ -270,5 +270,28 @@ namespace OdysseyClient
 
             return doc;
         }
+
+        public XmlDocument solicitarInfoUsuario(string usuario)
+        {
+            XmlDocument doc = new XmlDocument();
+            XmlDeclaration declaracion = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+            doc.AppendChild(declaracion);
+
+            XmlElement root = doc.CreateElement("MensajeXML");
+            doc.AppendChild(root);
+
+            XmlElement datos = doc.CreateElement("Datos");
+            root.AppendChild(datos);
+
+            XmlElement codigo = doc.CreateElement("Code");
+            codigo.AppendChild(doc.CreateTextNode("infoUsuario"));
+            datos.AppendChild(codigo);
+
+            XmlElement nom = doc.CreateElement("Usuario");
+            nom.AppendChild(doc.CreateTextNode(usuario));
+            datos.AppendChild(nom);
+
+            return doc;
+        }
     }
 }

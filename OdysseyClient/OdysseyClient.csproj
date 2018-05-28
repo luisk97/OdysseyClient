@@ -70,6 +70,12 @@
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="SocketCliente.cs" />
+    <Compile Include="VentanaAmigos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaAmigos.Designer.cs">
+      <DependentUpon>VentanaAmigos.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,8 +93,17 @@
     <Compile Include="Nodo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentanaPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaPerfil.Designer.cs">
+      <DependentUpon>VentanaPerfil.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaAmigos.resx">
+      <DependentUpon>VentanaAmigos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaLogIn.resx">
       <DependentUpon>VentanaLogIn.cs</DependentUpon>
@@ -100,6 +115,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaPerfil.resx">
+      <DependentUpon>VentanaPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -139,6 +157,13 @@
     <None Include="Resources\1486348523-music-note-play-melody_80456.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cascoTransparent.jpg" />
+    <None Include="Resources\cascoTransparente.jpg" />
+    <None Include="Resources\odysseyLogo.jpg" />
+    <None Include="Resources\icono Persona.png" />
+    <None Include="Resources\editar.png" />
+    <None Include="Resources\editar1.png" />
+    <None Include="Resources\editar11.png" />
     <Content Include="Resources\repCanVer.png" />
     <None Include="Resources\repCanVer1.png" />
     <Content Include="Resources\repetirVer.png" />

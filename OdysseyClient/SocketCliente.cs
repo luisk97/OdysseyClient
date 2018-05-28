@@ -22,14 +22,13 @@ namespace OdysseyClient
             listen.Send(msjEnviar, 0, msjEnviar.Length, 0);
 
             int bytesRead = 1;
-            int cont = 0;
             while (bytesRead != 0) {
                 byte[] buffer = new byte[30000];
 
                 bytesRead = listen.Receive(buffer);
                 
 
-                string response = System.Text.Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                string response = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                 resp += response;
             }
 
