@@ -293,5 +293,40 @@ namespace OdysseyClient
 
             return doc;
         }
+
+        public XmlDocument editarUsuario(string usuarioAnt, string usuario, string nombre, string edad)
+        {
+            XmlDocument doc = new XmlDocument();
+            XmlDeclaration declaracion = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+            doc.AppendChild(declaracion);
+
+            XmlElement root = doc.CreateElement("MensajeXML");
+            doc.AppendChild(root);
+
+            XmlElement datos = doc.CreateElement("Datos");
+            root.AppendChild(datos);
+
+            XmlElement codigo = doc.CreateElement("Code");
+            codigo.AppendChild(doc.CreateTextNode("editUsuario"));
+            datos.AppendChild(codigo);
+
+            XmlElement userAnt = doc.CreateElement("UsuarioAnt");
+            userAnt.AppendChild(doc.CreateTextNode(usuarioAnt));
+            datos.AppendChild(userAnt);
+
+            XmlElement user = doc.CreateElement("UsuarioNew");
+            user.AppendChild(doc.CreateTextNode(usuario));
+            userAnt.AppendChild(user);
+
+            XmlElement nom = doc.CreateElement("Nombre");
+            nom.AppendChild(doc.CreateTextNode(nombre));
+            userAnt.AppendChild(nom);
+
+            XmlElement ed = doc.CreateElement("Edad");
+            ed.AppendChild(doc.CreateTextNode(edad));
+            userAnt.AppendChild(ed);
+
+            return doc;
+        }
     }
 }

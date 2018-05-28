@@ -36,7 +36,8 @@ namespace OdysseyClient
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         SocketCliente sock = new SocketCliente();
-        string usuario = "Nombre de Usuario";
+        public string usuario = "Nombre de Usuario";
+        private MensajeXML msj = new MensajeXML();
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -81,8 +82,7 @@ namespace OdysseyClient
             panel4.Visible = true;
             panel5.Visible = false;
             panel6.Visible = false;
-
-            MensajeXML msj = new MensajeXML();
+            
             XmlDocument data = msj.cargarCanciones("nombre");
 
             MemoryStream ms = new MemoryStream();
@@ -148,8 +148,7 @@ namespace OdysseyClient
             panel5.Visible = false;
             panel6.Visible = true;
             
-
-            MensajeXML msj = new MensajeXML();
+            
             XmlDocument data = msj.cargarCanciones("artista");
 
             MemoryStream ms = new MemoryStream();
@@ -180,8 +179,7 @@ namespace OdysseyClient
             panel4.Visible = false;
             panel5.Visible = true;
             panel6.Visible = false;
-
-            MensajeXML msj = new MensajeXML();
+            
             XmlDocument data = msj.cargarCanciones("album");
 
             MemoryStream ms = new MemoryStream();
@@ -322,7 +320,6 @@ namespace OdysseyClient
 
         private void playSong(string nombre)
         {
-            MensajeXML msj = new MensajeXML();
             XmlDocument data = msj.xmlReproducir(nombre);
 
             MemoryStream ms = new MemoryStream();
@@ -514,7 +511,6 @@ namespace OdysseyClient
                 }
                 panel3.Visible = false;
 
-                MensajeXML msj = new MensajeXML();
                 XmlDocument data = msj.borrarCanciones(listaElim);
 
                 MemoryStream ms = new MemoryStream();
@@ -532,7 +528,7 @@ namespace OdysseyClient
         private void artistaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string srchArtist = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre del Artista:", "Buscar Cancion", "", 100, 100);
-            MensajeXML msj = new MensajeXML();
+
             XmlDocument data = msj.buscarArtista(srchArtist);
 
             MemoryStream ms = new MemoryStream();
@@ -564,7 +560,6 @@ namespace OdysseyClient
             string srchAlbum = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre del Album:", "Buscar Cancion", "", 100, 100);
             if (srchAlbum != null)
             {
-                MensajeXML msj = new MensajeXML();
                 XmlDocument data = msj.buscarAlbum(srchAlbum);
 
                 MemoryStream ms = new MemoryStream();
@@ -594,7 +589,7 @@ namespace OdysseyClient
         private void nombreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string srchSong = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre del Artista:", "Buscar Cancion", "", 100, 100);
-            MensajeXML msj = new MensajeXML();
+            
             XmlDocument data = msj.buscarNombre(srchSong);
 
             MemoryStream ms = new MemoryStream();
@@ -917,7 +912,6 @@ namespace OdysseyClient
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
-            MensajeXML msj = new MensajeXML();
             XmlDocument data = msj.solicitarInfoUsuario(usuario);
 
             MemoryStream ms = new MemoryStream();
@@ -931,12 +925,14 @@ namespace OdysseyClient
             XmlNodeList listUs = xmlUsuario.GetElementsByTagName("User");
             XmlNode nodoUser = listUs.Item(0);
 
-            string nombre = nodoUser.SelectSingleNode("nombre").InnerText;
-            string edad = nodoUser.SelectSingleNode("edad").InnerText;
+            string nombre = nodoUser.SelectSingleNode("nombre").InnerText.ToString();
+            string edad = nodoUser.SelectSingleNode("edad").InnerText.ToString();
 
-            VentanaPerfil vPerfil = new VentanaPerfil(usuario, nombre, edad);
+            VentanaPerfil vPerfil = new VentanaPerfil(usuario, nombre, edad,this);
             vPerfil.Owner = this;
             vPerfil.ShowDialog();
+
+            label5.Text = usuario;
         }
     }
 }

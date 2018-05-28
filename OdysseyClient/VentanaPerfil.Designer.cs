@@ -33,7 +33,17 @@
             this.lblEdad = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelEdit = new System.Windows.Forms.Panel();
+            this.textBoxUs = new System.Windows.Forms.TextBox();
+            this.lblUs = new System.Windows.Forms.Label();
+            this.lblNom = new System.Windows.Forms.Label();
+            this.lblEd = new System.Windows.Forms.Label();
+            this.textBoxNom = new System.Windows.Forms.TextBox();
+            this.textBoxEd = new System.Windows.Forms.TextBox();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -79,7 +89,7 @@
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Image = global::OdysseyClient.Properties.Resources.editar11;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.Location = new System.Drawing.Point(553, 0);
+            this.btnEditar.Location = new System.Drawing.Point(552, 0);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(112, 45);
             this.btnEditar.TabIndex = 4;
@@ -98,20 +108,124 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // panelEdit
+            // 
+            this.panelEdit.Controls.Add(this.btnCancel);
+            this.panelEdit.Controls.Add(this.btnOk);
+            this.panelEdit.Controls.Add(this.textBoxEd);
+            this.panelEdit.Controls.Add(this.textBoxNom);
+            this.panelEdit.Controls.Add(this.lblEd);
+            this.panelEdit.Controls.Add(this.lblNom);
+            this.panelEdit.Controls.Add(this.lblUs);
+            this.panelEdit.Controls.Add(this.textBoxUs);
+            this.panelEdit.Location = new System.Drawing.Point(253, 0);
+            this.panelEdit.Name = "panelEdit";
+            this.panelEdit.Size = new System.Drawing.Size(411, 272);
+            this.panelEdit.TabIndex = 5;
+            this.panelEdit.Visible = false;
+            // 
+            // textBoxUs
+            // 
+            this.textBoxUs.BackColor = System.Drawing.Color.Black;
+            this.textBoxUs.ForeColor = System.Drawing.Color.White;
+            this.textBoxUs.Location = new System.Drawing.Point(115, 39);
+            this.textBoxUs.Name = "textBoxUs";
+            this.textBoxUs.Size = new System.Drawing.Size(284, 20);
+            this.textBoxUs.TabIndex = 0;
+            // 
+            // lblUs
+            // 
+            this.lblUs.AutoSize = true;
+            this.lblUs.ForeColor = System.Drawing.Color.White;
+            this.lblUs.Location = new System.Drawing.Point(11, 42);
+            this.lblUs.Name = "lblUs";
+            this.lblUs.Size = new System.Drawing.Size(101, 13);
+            this.lblUs.TabIndex = 1;
+            this.lblUs.Text = "Nombre de Usuario:";
+            // 
+            // lblNom
+            // 
+            this.lblNom.AutoSize = true;
+            this.lblNom.ForeColor = System.Drawing.Color.White;
+            this.lblNom.Location = new System.Drawing.Point(18, 95);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(94, 13);
+            this.lblNom.TabIndex = 2;
+            this.lblNom.Text = "Nombre Completo:";
+            // 
+            // lblEd
+            // 
+            this.lblEd.AutoSize = true;
+            this.lblEd.ForeColor = System.Drawing.Color.White;
+            this.lblEd.Location = new System.Drawing.Point(77, 145);
+            this.lblEd.Name = "lblEd";
+            this.lblEd.Size = new System.Drawing.Size(35, 13);
+            this.lblEd.TabIndex = 3;
+            this.lblEd.Text = "Edad:";
+            // 
+            // textBoxNom
+            // 
+            this.textBoxNom.BackColor = System.Drawing.Color.Black;
+            this.textBoxNom.ForeColor = System.Drawing.Color.White;
+            this.textBoxNom.Location = new System.Drawing.Point(115, 92);
+            this.textBoxNom.Name = "textBoxNom";
+            this.textBoxNom.Size = new System.Drawing.Size(284, 20);
+            this.textBoxNom.TabIndex = 4;
+            // 
+            // textBoxEd
+            // 
+            this.textBoxEd.BackColor = System.Drawing.Color.Black;
+            this.textBoxEd.ForeColor = System.Drawing.Color.White;
+            this.textBoxEd.Location = new System.Drawing.Point(115, 142);
+            this.textBoxEd.Name = "textBoxEd";
+            this.textBoxEd.Size = new System.Drawing.Size(284, 20);
+            this.textBoxEd.TabIndex = 5;
+            // 
+            // btnOk
+            // 
+            this.btnOk.BackColor = System.Drawing.Color.Black;
+            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOk.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnOk.Location = new System.Drawing.Point(324, 236);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 6;
+            this.btnOk.Text = "Confirmar";
+            this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Black;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCancel.Location = new System.Drawing.Point(233, 236);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // VentanaPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(665, 271);
+            this.Controls.Add(this.panelEdit);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.lblEdad);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblUsuario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "VentanaPerfil";
+            this.Opacity = 0.9D;
             this.Text = "VentanaPerfil";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelEdit.ResumeLayout(false);
+            this.panelEdit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +238,14 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblEdad;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Panel panelEdit;
+        private System.Windows.Forms.Label lblEd;
+        private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.Label lblUs;
+        private System.Windows.Forms.TextBox textBoxUs;
+        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.TextBox textBoxEd;
+        private System.Windows.Forms.TextBox textBoxNom;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
