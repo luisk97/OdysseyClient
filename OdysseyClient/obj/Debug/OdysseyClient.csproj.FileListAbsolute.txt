@@ -1,0 +1,9 @@
+C:\Users\Danie\Documents\GitHub\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.csprojResolveAssemblyReference.cache
+C:\Users\Danie\Documents\GitHub\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.Principal.resources
+C:\Users\Danie\Documents\GitHub\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.VentanaAmigos.resources
+C:\Users\Danie\Documents\GitHub\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.VentanaLogIn.resources
+C:\Users\Danie\Documents\GitHub\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.VentanaData.resources
+C:\Users\Danie\Documents\GitHub\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.Properties.Resources.resources
+C:\Users\Danie\Documents\GitHub\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.VentanaPerfil.resources
+C:\Users\Danie\Documents\GitHub\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.csproj.GenerateResource.cache
+C:\Users\Danie\Documents\GitHub\OdysseyClient\OdysseyClient\obj\Debug\OdysseyClient.csproj.CoreCompileInputs.cache
