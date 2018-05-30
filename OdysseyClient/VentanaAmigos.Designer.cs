@@ -33,10 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewAmigos = new System.Windows.Forms.DataGridView();
-            this.btnAmigos = new System.Windows.Forms.Button();
-            this.btnPersonas = new System.Windows.Forms.Button();
             this.Persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAmigos = new System.Windows.Forms.Button();
+            this.btnPersonas = new System.Windows.Forms.Button();
             this.dataGridViewUsuarios = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +81,18 @@
             this.dataGridViewAmigos.TabIndex = 0;
             this.dataGridViewAmigos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewAmigos_CellMouseDoubleClick);
             // 
+            // Persona
+            // 
+            this.Persona.HeaderText = "Usuario";
+            this.Persona.Name = "Persona";
+            this.Persona.Width = 180;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 350;
+            // 
             // btnAmigos
             // 
             this.btnAmigos.Location = new System.Drawing.Point(0, 24);
@@ -99,18 +111,6 @@
             this.btnPersonas.TabIndex = 2;
             this.btnPersonas.Text = "Personas";
             this.btnPersonas.UseVisualStyleBackColor = true;
-            // 
-            // Persona
-            // 
-            this.Persona.HeaderText = "Usuario";
-            this.Persona.Name = "Persona";
-            this.Persona.Width = 180;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 350;
             // 
             // dataGridViewUsuarios
             // 
@@ -170,6 +170,7 @@
             this.Controls.Add(this.btnPersonas);
             this.Controls.Add(this.btnAmigos);
             this.Controls.Add(this.dataGridViewAmigos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "VentanaAmigos";
             this.Text = "VentanaAmigos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAmigos)).EndInit();

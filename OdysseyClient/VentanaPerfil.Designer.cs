@@ -34,14 +34,14 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelEdit = new System.Windows.Forms.Panel();
-            this.textBoxUs = new System.Windows.Forms.TextBox();
-            this.lblUs = new System.Windows.Forms.Label();
-            this.lblNom = new System.Windows.Forms.Label();
-            this.lblEd = new System.Windows.Forms.Label();
-            this.textBoxNom = new System.Windows.Forms.TextBox();
-            this.textBoxEd = new System.Windows.Forms.TextBox();
-            this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.textBoxEd = new System.Windows.Forms.TextBox();
+            this.textBoxNom = new System.Windows.Forms.TextBox();
+            this.lblEd = new System.Windows.Forms.Label();
+            this.lblNom = new System.Windows.Forms.Label();
+            this.lblUs = new System.Windows.Forms.Label();
+            this.textBoxUs = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelEdit.SuspendLayout();
             this.SuspendLayout();
@@ -124,62 +124,18 @@
             this.panelEdit.TabIndex = 5;
             this.panelEdit.Visible = false;
             // 
-            // textBoxUs
+            // btnCancel
             // 
-            this.textBoxUs.BackColor = System.Drawing.Color.Black;
-            this.textBoxUs.ForeColor = System.Drawing.Color.White;
-            this.textBoxUs.Location = new System.Drawing.Point(115, 39);
-            this.textBoxUs.Name = "textBoxUs";
-            this.textBoxUs.Size = new System.Drawing.Size(284, 20);
-            this.textBoxUs.TabIndex = 0;
-            // 
-            // lblUs
-            // 
-            this.lblUs.AutoSize = true;
-            this.lblUs.ForeColor = System.Drawing.Color.White;
-            this.lblUs.Location = new System.Drawing.Point(11, 42);
-            this.lblUs.Name = "lblUs";
-            this.lblUs.Size = new System.Drawing.Size(101, 13);
-            this.lblUs.TabIndex = 1;
-            this.lblUs.Text = "Nombre de Usuario:";
-            // 
-            // lblNom
-            // 
-            this.lblNom.AutoSize = true;
-            this.lblNom.ForeColor = System.Drawing.Color.White;
-            this.lblNom.Location = new System.Drawing.Point(18, 95);
-            this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(94, 13);
-            this.lblNom.TabIndex = 2;
-            this.lblNom.Text = "Nombre Completo:";
-            // 
-            // lblEd
-            // 
-            this.lblEd.AutoSize = true;
-            this.lblEd.ForeColor = System.Drawing.Color.White;
-            this.lblEd.Location = new System.Drawing.Point(77, 145);
-            this.lblEd.Name = "lblEd";
-            this.lblEd.Size = new System.Drawing.Size(35, 13);
-            this.lblEd.TabIndex = 3;
-            this.lblEd.Text = "Edad:";
-            // 
-            // textBoxNom
-            // 
-            this.textBoxNom.BackColor = System.Drawing.Color.Black;
-            this.textBoxNom.ForeColor = System.Drawing.Color.White;
-            this.textBoxNom.Location = new System.Drawing.Point(115, 92);
-            this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(284, 20);
-            this.textBoxNom.TabIndex = 4;
-            // 
-            // textBoxEd
-            // 
-            this.textBoxEd.BackColor = System.Drawing.Color.Black;
-            this.textBoxEd.ForeColor = System.Drawing.Color.White;
-            this.textBoxEd.Location = new System.Drawing.Point(115, 142);
-            this.textBoxEd.Name = "textBoxEd";
-            this.textBoxEd.Size = new System.Drawing.Size(284, 20);
-            this.textBoxEd.TabIndex = 5;
+            this.btnCancel.BackColor = System.Drawing.Color.Black;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCancel.Location = new System.Drawing.Point(233, 236);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOk
             // 
@@ -194,18 +150,62 @@
             this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // btnCancel
+            // textBoxEd
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Black;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnCancel.Location = new System.Drawing.Point(233, 236);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.textBoxEd.BackColor = System.Drawing.Color.Black;
+            this.textBoxEd.ForeColor = System.Drawing.Color.White;
+            this.textBoxEd.Location = new System.Drawing.Point(115, 142);
+            this.textBoxEd.Name = "textBoxEd";
+            this.textBoxEd.Size = new System.Drawing.Size(284, 20);
+            this.textBoxEd.TabIndex = 5;
+            // 
+            // textBoxNom
+            // 
+            this.textBoxNom.BackColor = System.Drawing.Color.Black;
+            this.textBoxNom.ForeColor = System.Drawing.Color.White;
+            this.textBoxNom.Location = new System.Drawing.Point(115, 92);
+            this.textBoxNom.Name = "textBoxNom";
+            this.textBoxNom.Size = new System.Drawing.Size(284, 20);
+            this.textBoxNom.TabIndex = 4;
+            // 
+            // lblEd
+            // 
+            this.lblEd.AutoSize = true;
+            this.lblEd.ForeColor = System.Drawing.Color.White;
+            this.lblEd.Location = new System.Drawing.Point(77, 145);
+            this.lblEd.Name = "lblEd";
+            this.lblEd.Size = new System.Drawing.Size(35, 13);
+            this.lblEd.TabIndex = 3;
+            this.lblEd.Text = "Edad:";
+            // 
+            // lblNom
+            // 
+            this.lblNom.AutoSize = true;
+            this.lblNom.ForeColor = System.Drawing.Color.White;
+            this.lblNom.Location = new System.Drawing.Point(18, 95);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(94, 13);
+            this.lblNom.TabIndex = 2;
+            this.lblNom.Text = "Nombre Completo:";
+            // 
+            // lblUs
+            // 
+            this.lblUs.AutoSize = true;
+            this.lblUs.ForeColor = System.Drawing.Color.White;
+            this.lblUs.Location = new System.Drawing.Point(11, 42);
+            this.lblUs.Name = "lblUs";
+            this.lblUs.Size = new System.Drawing.Size(101, 13);
+            this.lblUs.TabIndex = 1;
+            this.lblUs.Text = "Nombre de Usuario:";
+            // 
+            // textBoxUs
+            // 
+            this.textBoxUs.BackColor = System.Drawing.Color.Black;
+            this.textBoxUs.ForeColor = System.Drawing.Color.White;
+            this.textBoxUs.Location = new System.Drawing.Point(115, 39);
+            this.textBoxUs.Name = "textBoxUs";
+            this.textBoxUs.Size = new System.Drawing.Size(284, 20);
+            this.textBoxUs.TabIndex = 0;
             // 
             // VentanaPerfil
             // 

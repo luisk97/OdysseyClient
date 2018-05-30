@@ -45,9 +45,78 @@ namespace OdysseyClient
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            
-            XmlDocument data = msj.editarUsuario(usuario, textBoxUs.Text.ToString(), textBoxNom.Text.ToString(), textBoxEd.Text.ToString());
+            string usua = textBoxUs.Text;
+            string nombre = textBoxNom.Text;
+            string edad = textBoxEd.Text;
+            XmlDocument data;
+            XmlNode nodoUser = null;
+            if (usua != "")
+            {
+                if (nombre != "")
+                {
+                    if (edad != "")
+                    {
+                        data = msj.editarUsuario(usuario, usua, nombre, edad);
+                        nodoUser = aceptar(data);
+                    }
+                    else
+                    {
+                        data = msj.editarUsuario(usuario, usua, nombre, lblEdad.Text.ToString());
+                        nodoUser = aceptar(data);
+                    }
 
+                }
+                else if (edad != "")
+                {
+                    data = msj.editarUsuario(usuario, usua, lblNombre.Text.ToString(), edad);
+                    nodoUser = aceptar(data);
+                }
+                else
+                {
+                    data = msj.editarUsuario(usuario, usua, lblNombre.Text.ToString(), lblEdad.Text.ToString());
+                    nodoUser = aceptar(data);
+                }
+            }
+            else if (nombre != "")
+            {
+                if (edad != "")
+                {
+                    data = msj.editarUsuario(usuario, usuario, nombre, edad);
+                    nodoUser = aceptar(data);
+                }
+                else
+                {
+                    data = msj.editarUsuario(usuario, usuario, nombre, lblEdad.Text.ToString());
+                    nodoUser = aceptar(data);
+                }
+            }
+            else if (edad != "")
+            {
+                data = msj.editarUsuario(usuario, usuario, lblNombre.Text.ToString(), edad);
+                nodoUser = aceptar(data);
+            }
+            if (nodoUser != null)
+            {
+                usua = nodoUser.SelectSingleNode("usuario").InnerText.ToString();
+                nombre = nodoUser.SelectSingleNode("nombre").InnerText.ToString();
+                edad = nodoUser.SelectSingleNode("edad").InnerText.ToString();
+                this.usuario = usua;
+
+                principal.usuario = usua;
+
+                lblUsuario.Text = usua;
+                lblNombre.Text = nombre;
+                lblEdad.Text = edad;
+
+                textBoxUs.Text = "";
+                textBoxNom.Text = "";
+                textBoxEd.Text = "";
+                panelEdit.Visible = false;
+            }
+        }
+
+        private XmlNode aceptar(XmlDocument data)
+        {
             MemoryStream ms = new MemoryStream();
             data.Save(ms);
             byte[] msjEnviar = ms.ToArray();
@@ -58,23 +127,8 @@ namespace OdysseyClient
 
             XmlNodeList listUs = xmlUsuario.GetElementsByTagName("User");
             XmlNode nodoUser = listUs.Item(0);
-
-            string usua = nodoUser.SelectSingleNode("usuario").InnerText.ToString();
-            string nombre = nodoUser.SelectSingleNode("nombre").InnerText.ToString();
-            string edad = nodoUser.SelectSingleNode("edad").InnerText.ToString();
-            this.usuario = usua;
-
-            principal.usuario = usua;
-
-            lblUsuario.Text = usua;
-            lblNombre.Text = nombre;
-            lblEdad.Text = edad;
-
-            textBoxUs.Text = "";
-            textBoxNom.Text = "";
-            textBoxEd.Text = "";
-            panelEdit.Visible = false;
+            return nodoUser;
         }
-        
+
     }
 }

@@ -94,6 +94,7 @@
             this.textBox1.Size = new System.Drawing.Size(232, 13);
             this.textBox1.TabIndex = 2;
             this.textBox1.UseSystemPasswordChar = true;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox2
             // 
@@ -104,6 +105,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(262, 13);
             this.textBox2.TabIndex = 3;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // pictureBox1
             // 
@@ -118,6 +120,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
@@ -174,7 +177,7 @@
             this.panel4.Controls.Add(this.textBox3);
             this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(0, -1);
+            this.panel4.Location = new System.Drawing.Point(133, 232);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(557, 286);
             this.panel4.TabIndex = 10;
@@ -294,7 +297,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(556, 285);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
@@ -304,6 +306,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "VentanaLogIn";
             this.Opacity = 0.85D;

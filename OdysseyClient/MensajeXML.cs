@@ -316,15 +316,15 @@ namespace OdysseyClient
 
             XmlElement user = doc.CreateElement("UsuarioNew");
             user.AppendChild(doc.CreateTextNode(usuario));
-            userAnt.AppendChild(user);
+            datos.AppendChild(user);
 
             XmlElement nom = doc.CreateElement("Nombre");
             nom.AppendChild(doc.CreateTextNode(nombre));
-            userAnt.AppendChild(nom);
+            datos.AppendChild(nom);
 
             XmlElement ed = doc.CreateElement("Edad");
             ed.AppendChild(doc.CreateTextNode(edad));
-            userAnt.AppendChild(ed);
+            datos.AppendChild(ed);
 
             return doc;
         }
