@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace OdysseyClient
 {
+    /// <summary>
+    /// Clase que nos mantiene en memoria dinamica las canciones que se muestran en pantalla
+    /// </summary>
     class ListaCanciones
     {
         private Nodo cabeza;

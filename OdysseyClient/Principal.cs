@@ -20,6 +20,9 @@ using NAudio.CoreAudioApi;
 
 namespace OdysseyClient
 {
+    /// <summary>
+    /// Ventana principal del reproductor de music Odyssey
+    /// </summary>
     public partial class Principal : Form
     {
         public Principal(string usuario)
@@ -73,9 +76,13 @@ namespace OdysseyClient
 
         String resp = "";
         XmlDocument xmlCanciones = new XmlDocument();
-        //ListaCanciones lista = new ListaCanciones();
-        //List<Cancion> lista = new List<Cancion>();
 
+        /// <summary>
+        /// Al precionar este boton se crea un xml el cual se envia al servidor para llamar la lista de 
+        /// cancions ordenadas por nombre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             panel3.Visible = false;
@@ -108,8 +115,14 @@ namespace OdysseyClient
         }
 
 
+
         ListaCanciones lista = new ListaCanciones();
         Cancion cancionActual = null;
+        /// <summary>
+        /// Funcion que recive un XmlNodeList con la info de las canciones que se enviaron desde el
+        /// servidor y llena el DataGridView con esa lista de canciones
+        /// </summary>
+        /// <param name="listaXml"></param>
         private void actualizarLista(XmlNodeList listaXml)
         {
             dataGridView1.Rows.Clear();
@@ -140,7 +153,12 @@ namespace OdysseyClient
             }
         }
 
-
+        /// <summary>
+        /// Al precionar este boton se crea un xml el cual se envia al servidor para llamar la lista de 
+        /// cancions ordenadas por artista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             panel3.Visible = false;
@@ -173,6 +191,12 @@ namespace OdysseyClient
             //richTextBox1.Text = XmlString+"Ahi esta perro";
         }
 
+        /// <summary>
+        /// Al precionar este boton se crea un xml el cual se envia al servidor para llamar la lista de 
+        /// cancions ordenadas por album
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             panel3.Visible = false;
@@ -202,6 +226,11 @@ namespace OdysseyClient
             //richTextBox1.Text = XmlString + "Ahi esta perro";
         }
 
+        /// <summary>
+        /// Al precionar este item del StripMenu se abre una ventana para buscar la cancion que queremos añadir al servidor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void hToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -220,29 +249,55 @@ namespace OdysseyClient
             open.Dispose();
         }
 
+        /// <summary>
+        /// Al precionar este pictureBox muestra el panel de usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             label5.Text = usuario;
             panel3.Visible = true;
         }
 
+        /// <summary>
+        /// Cierra el panel de usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             panel3.Visible = false;
         }
 
+        /// <summary>
+        /// cierra el panel del ecualizador e informacion de la cancion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             panel7.Visible = false;
         }
 
+        /// <summary>
+        /// Abre el panel del ecualizador e informacion de la cancion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             panel7.Visible = true;
             panel3.Visible = false;
         }
 
+
         private Boolean play = false;
+        /// <summary>
+        /// Boton de pausa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             if (output != null)
@@ -262,16 +317,31 @@ namespace OdysseyClient
             }
         }
 
+        /// <summary>
+        /// Al iniciar la ventana le da un diseño de filas alternadas al DataGridView de las canciones
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(64,64,64);
         }
 
+        /// <summary>
+        /// Cierra la aplicacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button11_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Minimiza la aplicacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button12_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -303,7 +373,9 @@ namespace OdysseyClient
             //label4.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
         }
 
-
+        /// <summary>
+        /// Limpia el output de reproduccion del mp3
+        /// </summary>
         private void disposeStream()
         {
             if(output != null)
@@ -317,7 +389,11 @@ namespace OdysseyClient
             }
         }
 
-
+        /// <summary>
+        /// Recibe el nombre de la cancion que se desea reproducir manda a crear un xml el cual se envia al 
+        /// servidor para solicitar la cancion y luego de recibirla la reproduce
+        /// </summary>
+        /// <param name="nombre"></param>
         private void playSong(string nombre)
         {
             XmlDocument data = msj.xmlReproducir(nombre);
@@ -359,11 +435,14 @@ namespace OdysseyClient
             play = true;
         }
 
-
-        //private WaveStream blockAlignedStream;
-        //private BlockAlignReductionStream stream;
+        
         private DirectSoundOut output;
         private Mp3FileReader mp3Reader;
+        /// <summary>
+        /// Al dar doble click en una fila se manda a llamr la cancion de la fila seleccionada para reproducirla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (!elim)
@@ -395,7 +474,11 @@ namespace OdysseyClient
             }
         }
 
-
+        /// <summary>
+        /// Con dar un click en el encabezado de las filas se manda a llamr la cancion de la fila seleccionada para reproducirla 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (!elim)
@@ -417,7 +500,11 @@ namespace OdysseyClient
             }
         }
 
-
+        /// <summary>
+        /// boton stop
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox9_Click(object sender, EventArgs e)
         {
             if (output != null)
@@ -433,6 +520,11 @@ namespace OdysseyClient
 
 
         private Boolean elim = false;
+        /// <summary>
+        /// Boton que nos muestra la vista de seleccion de canciones a eliminar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (elim)
@@ -466,6 +558,12 @@ namespace OdysseyClient
             panel3.Visible = false;
         }
 
+        /// <summary>
+        /// Se crea una lista de canciones con las canciones seleccionadas a eliminar y manda a crear un xml con esas canciones
+        /// par enviarlo al servidor y eliminar las canciones de esa lista en el servidor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
             DialogResult opcion;
@@ -518,6 +616,11 @@ namespace OdysseyClient
             }
         }
 
+        /// <summary>
+        /// Al precinar este item del StripMenu se muestra una ventana para buscar canciones por artista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void artistaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string srchArtist = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre del Artista:", "Buscar Cancion", "", 100, 100);
@@ -547,6 +650,11 @@ namespace OdysseyClient
             }
         }
 
+        /// <summary>
+        /// Al precinar este item del StripMenu se muestra una ventana para buscar canciones por album
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void albumToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -579,6 +687,11 @@ namespace OdysseyClient
             }
         }
 
+        /// <summary>
+        /// Al precinar este item del StripMenu se muestra una ventana para buscar canciones por nombre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void nombreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string srchSong = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre del Artista:", "Buscar Cancion", "", 100, 100);
@@ -608,6 +721,11 @@ namespace OdysseyClient
             }
         }
 
+        /// <summary>
+        /// Al precionar este boton se pasa a la siguiente cancion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
             button4.Text = ">";
@@ -669,7 +787,14 @@ namespace OdysseyClient
             }
         }
 
+
         private int vol;
+        /// <summary>
+        /// Mediante este timer se lleva el control para que la trackBar sigua la reproduccion de la cancion ademas de la visualizacion
+        /// del ecualizador y de que cuando una cancion termina empiece la siguente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer_Tick(object sender, EventArgs e)
         {
             songTrackBar1.Value = (int)mp3Reader.CurrentTime.TotalSeconds;
@@ -801,6 +926,11 @@ namespace OdysseyClient
             }
         }
 
+        /// <summary>
+        /// Nos permite adelantar o atrasar la cancion mediante la trackBar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void songTrackBar1_Scroll(object sender, EventArgs e)
         {
             if (mp3Reader != null)
@@ -809,7 +939,11 @@ namespace OdysseyClient
             }
         }
 
-
+        /// <summary>
+        /// Cierra la aplicacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button10_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -817,6 +951,11 @@ namespace OdysseyClient
 
 
         bool repCancion = false;
+        /// <summary>
+        /// Activa la repeticion de la cancion que se reprodusca
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             repCancion = true;
@@ -832,6 +971,11 @@ namespace OdysseyClient
 
 
         bool repLista = false;
+        /// <summary>
+        /// Activa la repeticion de la lista de canciones
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureRep1_Click(object sender, EventArgs e)
         {
             repLista = true;
@@ -845,6 +989,12 @@ namespace OdysseyClient
             pictureRepVer.Visible = false;
         }
 
+
+        /// <summary>
+        /// Al precionar esta cancion se pasa a la cancion anterior
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
             button4.Text = ">";
@@ -906,6 +1056,9 @@ namespace OdysseyClient
             }
         }
 
+        /// <summary>
+        /// Pone valores por defecto a las labels
+        /// </summary>
         private void cleanLabels()
         {
             label3.Text = "Nombre de la Cancion";
@@ -933,6 +1086,11 @@ namespace OdysseyClient
 
         }
 
+        /// <summary>
+        /// Nos muestra la ventana con la informacion del usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPerfil_Click(object sender, EventArgs e)
         {
             XmlDocument data = msj.solicitarInfoUsuario(usuario);
@@ -966,6 +1124,33 @@ namespace OdysseyClient
         private void btnCerrar2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAmigos_Click(object sender, EventArgs e)
+        {
+            XmlDocument data = msj.solicitarListaAmigos(usuario);
+
+            MemoryStream ms = new MemoryStream();
+            data.Save(ms);
+            byte[] msjEnviar = ms.ToArray();
+
+            resp = sock.abrirSocket(msjEnviar);
+
+            XmlNodeList listUs = null;
+            if (!resp.Equals("Sin amigos"))
+            {
+                XmlDocument xmlUsuario = new XmlDocument();
+                xmlUsuario.LoadXml(resp);
+
+                listUs = xmlUsuario.GetElementsByTagName("Amigo");
+            }
+            else
+            {
+                VentanaAmigos vAmigos = new VentanaAmigos(listUs,usuario);
+                vAmigos.Owner = this;
+                vAmigos.ShowDialog();
+            }
+
         }
     }
 }

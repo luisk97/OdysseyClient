@@ -31,23 +31,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewAmigos = new System.Windows.Forms.DataGridView();
             this.Persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAmigos = new System.Windows.Forms.Button();
-            this.btnPersonas = new System.Windows.Forms.Button();
-            this.dataGridViewUsuarios = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBoxBuscarA = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAmigos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewAmigos
             // 
             this.dataGridViewAmigos.AllowUserToAddRows = false;
             this.dataGridViewAmigos.AllowUserToDeleteRows = false;
+            this.dataGridViewAmigos.AllowUserToResizeColumns = false;
+            this.dataGridViewAmigos.AllowUserToResizeRows = false;
             this.dataGridViewAmigos.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewAmigos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridViewAmigos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -63,21 +63,32 @@
             this.dataGridViewAmigos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Persona,
             this.Nombre});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAmigos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewAmigos.EnableHeadersVisualStyles = false;
             this.dataGridViewAmigos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewAmigos.Location = new System.Drawing.Point(0, 53);
             this.dataGridViewAmigos.MultiSelect = false;
             this.dataGridViewAmigos.Name = "dataGridViewAmigos";
+            this.dataGridViewAmigos.ReadOnly = true;
             this.dataGridViewAmigos.RowHeadersVisible = false;
             this.dataGridViewAmigos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewAmigos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAmigos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewAmigos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewAmigos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAmigos.Size = new System.Drawing.Size(535, 223);
+            this.dataGridViewAmigos.Size = new System.Drawing.Size(588, 262);
             this.dataGridViewAmigos.TabIndex = 0;
             this.dataGridViewAmigos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewAmigos_CellMouseDoubleClick);
             // 
@@ -85,80 +96,63 @@
             // 
             this.Persona.HeaderText = "Usuario";
             this.Persona.Name = "Persona";
+            this.Persona.ReadOnly = true;
+            this.Persona.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Persona.Width = 180;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Nombre.Width = 350;
             // 
             // btnAmigos
             // 
-            this.btnAmigos.Location = new System.Drawing.Point(0, 24);
+            this.btnAmigos.BackColor = System.Drawing.Color.Transparent;
+            this.btnAmigos.FlatAppearance.BorderSize = 0;
+            this.btnAmigos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnAmigos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAmigos.Image = global::OdysseyClient.Properties.Resources.BuscarAmigo2;
+            this.btnAmigos.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnAmigos.Location = new System.Drawing.Point(546, 10);
             this.btnAmigos.Name = "btnAmigos";
-            this.btnAmigos.Size = new System.Drawing.Size(75, 23);
+            this.btnAmigos.Size = new System.Drawing.Size(28, 28);
             this.btnAmigos.TabIndex = 1;
-            this.btnAmigos.Text = "Amigos";
-            this.btnAmigos.UseVisualStyleBackColor = true;
+            this.btnAmigos.UseVisualStyleBackColor = false;
             this.btnAmigos.Click += new System.EventHandler(this.btnAmigos_Click);
             // 
-            // btnPersonas
+            // pictureBox1
             // 
-            this.btnPersonas.Location = new System.Drawing.Point(105, 24);
-            this.btnPersonas.Name = "btnPersonas";
-            this.btnPersonas.Size = new System.Drawing.Size(75, 23);
-            this.btnPersonas.TabIndex = 2;
-            this.btnPersonas.Text = "Personas";
-            this.btnPersonas.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = global::OdysseyClient.Properties.Resources.fondoBuscarAmigo;
+            this.pictureBox1.Location = new System.Drawing.Point(367, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(221, 42);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
-            // dataGridViewUsuarios
+            // textBoxBuscarA
             // 
-            this.dataGridViewUsuarios.AllowUserToAddRows = false;
-            this.dataGridViewUsuarios.AllowUserToDeleteRows = false;
-            this.dataGridViewUsuarios.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridViewUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridViewUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.dataGridViewUsuarios.EnableHeadersVisualStyles = false;
-            this.dataGridViewUsuarios.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridViewUsuarios.Location = new System.Drawing.Point(0, 92);
-            this.dataGridViewUsuarios.MultiSelect = false;
-            this.dataGridViewUsuarios.Name = "dataGridViewUsuarios";
-            this.dataGridViewUsuarios.RowHeadersVisible = false;
-            this.dataGridViewUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUsuarios.Size = new System.Drawing.Size(535, 223);
-            this.dataGridViewUsuarios.TabIndex = 3;
+            this.textBoxBuscarA.BackColor = System.Drawing.Color.Black;
+            this.textBoxBuscarA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxBuscarA.ForeColor = System.Drawing.Color.White;
+            this.textBoxBuscarA.Location = new System.Drawing.Point(379, 18);
+            this.textBoxBuscarA.Name = "textBoxBuscarA";
+            this.textBoxBuscarA.Size = new System.Drawing.Size(170, 13);
+            this.textBoxBuscarA.TabIndex = 3;
             // 
-            // dataGridViewTextBoxColumn1
+            // label1
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Usuario";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 350;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 33);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Amigos";
             // 
             // VentanaAmigos
             // 
@@ -166,16 +160,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(588, 327);
-            this.Controls.Add(this.dataGridViewUsuarios);
-            this.Controls.Add(this.btnPersonas);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxBuscarA);
             this.Controls.Add(this.btnAmigos);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridViewAmigos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "VentanaAmigos";
             this.Text = "VentanaAmigos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAmigos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -183,11 +179,10 @@
 
         private System.Windows.Forms.DataGridView dataGridViewAmigos;
         private System.Windows.Forms.Button btnAmigos;
-        private System.Windows.Forms.Button btnPersonas;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBoxBuscarA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Persona;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridView dataGridViewUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Label label1;
     }
 }

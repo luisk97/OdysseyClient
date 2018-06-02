@@ -123,6 +123,26 @@ namespace OdysseyClient.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BuscarAmigo {
+            get {
+                object obj = ResourceManager.GetObject("BuscarAmigo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BuscarAmigo2 {
+            get {
+                object obj = ResourceManager.GetObject("BuscarAmigo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cascoTransparent {
             get {
                 object obj = ResourceManager.GetObject("cascoTransparent", resourceCulture);
@@ -206,6 +226,16 @@ namespace OdysseyClient.Properties {
         internal static System.Drawing.Bitmap elim {
             get {
                 object obj = ResourceManager.GetObject("elim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoBuscarAmigo {
+            get {
+                object obj = ResourceManager.GetObject("fondoBuscarAmigo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -164,6 +164,9 @@
     <None Include="Resources\editar.png" />
     <None Include="Resources\editar1.png" />
     <None Include="Resources\editar11.png" />
+    <None Include="Resources\fondoBuscarAmigo.png" />
+    <None Include="Resources\BuscarAmigo.png" />
+    <None Include="Resources\BuscarAmigo2.png" />
     <Content Include="Resources\repCanVer.png" />
     <None Include="Resources\repCanVer1.png" />
     <Content Include="Resources\repetirVer.png" />

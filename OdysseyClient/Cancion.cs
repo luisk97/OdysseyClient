@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace OdysseyClient
 {
+    /// <summary>
+    /// Clase que nos mantiene en memoria dinamica la informacion de una cancion
+    /// </summary>
     public class Cancion
     {
         public string Nombre { get; set; }

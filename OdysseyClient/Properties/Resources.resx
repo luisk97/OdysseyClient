@@ -148,6 +148,9 @@
   <data name="cd-icono-9854-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cd-icono-9854-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="volFull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volFull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="amigos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\amigos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,17 +163,23 @@
   <data name="odysseyLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\odysseyLogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="editar11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btnSalir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSalir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cascoTransparente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cascoTransparente.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="music_sound_audio_2028" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\music_sound_audio_2028.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Noti" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Noti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="repCanNeg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\repCanNeg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="26757" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\26757.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,6 +196,9 @@
   <data name="retrocederBlank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\retrocederBlank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BuscarAmigo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BuscarAmigo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="search-symbol_icon-icons.com_71358" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search-symbol_icon-icons.com_71358.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,23 +208,20 @@
   <data name="unnamed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unnamed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="repCanNeg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\repCanNeg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="repetirNeg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\repetirNeg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cascoTransparente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cascoTransparente.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fondoBuscarAmigo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondoBuscarAmigo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="odyssey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\odyssey.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="repCanNeg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repCanNeg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="volFull" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\volFull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="repCanNeg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repCanNeg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cdrom_83724" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cdrom_83724.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,7 +238,7 @@
   <data name="repCanVer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\repCanVer1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editar11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editar11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BuscarAmigo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BuscarAmigo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

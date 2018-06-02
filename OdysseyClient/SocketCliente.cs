@@ -8,8 +8,17 @@ using System.Threading.Tasks;
 
 namespace OdysseyClient
 {
+    /// <summary>
+    /// Esta clase establecera la comunicacion con la aplicacion servidor
+    /// </summary>
     class SocketCliente
     {
+        /// <summary>
+        /// Este metodo recibe un objeto y lo transforma en un Array de bytes para enviarlo al servidor y 
+        /// retorna el string que nos devuelve el servidor
+        /// </summary>
+        /// <param name="o"></param>
+        /// <returns></returns>
         public string abrirSocket(object o)
         {
             string resp = null;
@@ -22,6 +31,7 @@ namespace OdysseyClient
             listen.Send(msjEnviar, 0, msjEnviar.Length, 0);
 
             int bytesRead = 1;
+            // Ciclo que lee la totalidad del mensaje enviado por el servidor
             while (bytesRead != 0) {
                 byte[] buffer = new byte[30000];
 
@@ -31,12 +41,6 @@ namespace OdysseyClient
                 string response = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                 resp += response;
             }
-
-            //byte[] bytes = new byte[30000];
-            ////recibe datos y devuelve el número de bytes leídos correctamente
-            //int count = listen.Receive(bytes);
-            ////decodifica bytes a nueva cadena string
-            //resp = System.Text.Encoding.ASCII.GetString(bytes, 0, count);
 
             listen.Close();
 
