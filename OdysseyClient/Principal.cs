@@ -659,20 +659,18 @@ namespace OdysseyClient
         {
 
             string srchAlbum = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre del Album:", "Buscar Cancion", "", 100, 100);
-            if (srchAlbum != null)
+
+            XmlDocument data = msj.buscarAlbum(srchAlbum);
+
+            MemoryStream ms = new MemoryStream();
+            data.Save(ms);
+            byte[] msjEnviar = ms.ToArray();
+
+            resp = sock.abrirSocket(msjEnviar);
+
+            if (resp.Equals("No encontrado"))
             {
-                XmlDocument data = msj.buscarAlbum(srchAlbum);
-
-                MemoryStream ms = new MemoryStream();
-                data.Save(ms);
-                byte[] msjEnviar = ms.ToArray();
-
-                resp = sock.abrirSocket(msjEnviar);
-
-                if (resp.Equals("No encontrado"))
-                {
-                    MessageBox.Show("No se encontraron canciones pertenecientes al album " + srchAlbum, "Busqueda de Canciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("No se encontraron canciones pertenecientes al album " + srchAlbum, "Busqueda de Canciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
